@@ -1,0 +1,150 @@
+﻿@model DeeptiArt.Models.AdminTbl
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Deepti Arts</title>
+    <!--favicon-->
+    <link rel="icon" href="https://deeptiarts.databoltahai.in/Content/assets/projectImages/About/logo.png" type="image/png">
+    <!--plugins-->
+    <script src="~/Content/AdminAssets/js/jquery.min.js"></script>
+
+    <link href="~/Content/AdminAssets/plugins/simplebar/css/simplebar.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/AdminAssets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/css/app.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/css/icons.css" rel="stylesheet">
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>
+        <!--wrapper-->
+        <div class="wrapper">
+            <div class="authentication-header"></div>
+            <div class="section-authentication-signin d-flex align-items-center justify-content-center my-lg-0">
+                <div class="container-fluid">
+                    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+                        <div class="col mx-auto">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="p-4 rounded">
+                                        <div class="text-center">
+                                            <p>
+                                                <img class="img-fluid w-50 mx-auto" src="https://deeptiarts.databoltahai.in/Content/assets/projectImages/About/logo.png" />
+                                            </p>
+                                            <h3 class="">Sign in</h3>
+
+                                        </div>
+                                        <div class="form-body">
+                                            @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { id = "loginForm", @class = "row g-3" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <div class="col-12">
+                                                    <label for="uName" class="form-label">Username</label>
+                                                    <input name="uName" type="text" class="form-control" id="uName" placeholder="Username">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="uPassword" class="form-label">Enter Password</label>
+                                                    <div class="input-group" id="show_hide_password">
+                                                        <input name="uPassword" type="password" class="form-control border-end-0" id="uPassword" value="" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 text-start">
+                                                    <span id="incorrectMessage" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="d-grid">
+                                                        <button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Sign in</button>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+            </div>
+        </div>
+        <!--end wrapper-->
+        <!-- Bootstrap JS -->
+        <script src="~/Content/AdminAssets/js/bootstrap.bundle.min.js"></script>
+        <!--plugins-->
+        <script src="~/Content/AdminAssets/js/jquery.min.js"></script>
+        <script src="~/Content/AdminAssets/plugins/simplebar/js/simplebar.min.js"></script>
+        <script src="~/Content/AdminAssets/plugins/metismenu/js/metisMenu.min.js"></script>
+        <!--Password show & hide js -->
+        <script>
+            $(document).ready(function () {
+                $("#show_hide_password a").on('click', function (event) {
+                    event.preventDefault();
+                    if ($('#show_hide_password input').attr("type") == "text") {
+                        $('#show_hide_password input').attr('type', 'password');
+                        $('#show_hide_password i').addClass("bx-hide");
+                        $('#show_hide_password i').removeClass("bx-show");
+                    } else if ($('#show_hide_password input').attr("type") == "password") {
+                        $('#show_hide_password input').attr('type', 'text');
+                        $('#show_hide_password i').removeClass("bx-hide");
+                        $('#show_hide_password i').addClass("bx-show");
+                    }
+                });
+
+                 // Handle form submission via AJAX
+    $("#loginForm").submit(function (e) {
+        e.preventDefault(); // Prevent the form from submitting normally
+
+        var form = $(this);
+        var url = form.attr('action');
+        var data = form.serialize();
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    // Redirect to the desired page on successful login
+                    window.location.href = '@Url.Action("Index", "Admin")';
+                } else {
+                    // Show error message for incorrect login
+                    $('#incorrectMessage').text('Incorrect Username or Password!');
+
+                    // Hide the message after 5 seconds
+                    setTimeout(function () {
+                        $('#incorrectMessage').text('');
+                    }, 5000);
+                }
+            },
+            error: function () {
+                // Show error message for AJAX error
+                $('#incorrectMessage').text('An error occurred while processing the request. Please try again later.');
+
+                // Hide the message after 5 seconds
+                setTimeout(function () {
+                    $('#incorrectMessage').text('');
+                }, 5000);
+            }
+        });
+    });
+});
+        </script>
+        <!--app JS-->
+        @*<script src="~/Content/AdminAssets/js/app.js"></script>*@
+    </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+﻿@model IEnumerable<DeeptiArt.Models.CheckoutViewModel>
+@{
+    ViewBag.Title = "Order Placed";
+}
+
+<!-- Main -->
+<main>
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">Order Confirm</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb dark-link m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap" href="~/">
+                                <i class="bi bi-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Order Confirm</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Table -->
+    <div id="orderConfirm">
+
+        <!--Top-->
+        <div class="topBox py-8" style="background-color: #eae3d9;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center">
+                        <h1 style="color: #423328; font-family: 'Cinzel Decorative', cursive; ">Thanks for YOUR ORDER</h1>
+
+                        <div class="my-2">
+                            <img class="img-fluid" src="https://tlr.stripocdn.email/content/guids/CABINET_8e5b3213aaa5a44b520869b2b72b55de/images/line_9_lGy.png" alt="">
+                        </div>
+
+                        <p class="m-0 fw-400 mt-3">
+                            We've got your order! Your world is about to look a whole lot better soon.
+                            <br />
+                            We'll send you another email when your order ships.
+                        </p>
+                        <p class="mt-4">— The Deepti Arts Team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Mid-->
+        <div class="order-details py-8" style="background-color: #FAF6EE;">
+            <div class="container">
+                <div class="row mb-6">
+                    <div class="col-12">
+                        <div class="card rounded-2 border-0" style="box-shadow: 0 5px 15px rgba(0,0,0,0.20);">
+                            <div class="card-body py-5">
+                                <div class="order-number-top d-flex flex-column flex-sm-column flex-md-row justify-content-between align-items-center">
+                                    <h3 class="text-center m-0" style="color: #423328;">
+                                        <span style="color: #423328; font-family: 'Cinzel Decorative', cursive; ">ORDER NO.</span>
+                                        @TempData["orderNumber"]
+                                    </h3>
+                                    <h4 class="mt-2 mt-md-0 ms-0 ms-mdm-auto m-0" style="color: #423328;">@DateTime.Now.Date.ToString("dd/MM/yyyy")</h4>
+                                </div>
+                                <div class="invoice text-center text-lg-start mt-3">
+                                    <button id="generate-invoice" type="button" class="btn btn-mode btn-sm px-4 rounded-1" style="background: #423328; ">Generate Invoice</button>
+                                    @*<a href="@Url.Action("GenerateInvoicePdf", "checkout")" target="_blank" class="btn btn-primary">Generate PDF</a>*@
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Ordered Items List -->
+                    <div class="col-lg-4 pb-4 pb-lg-0 col-xxl-3 pe-xxl-5">
+                        <div class="card rounded-2 border-0" style="box-shadow: 0 5px 15px rgba(0,0,0,0.20);">
+                            <div class="card-body">
+
+                                <ul class="list-unstyled m-0 p-0">
+                                    @foreach (var item in Model)
+                                    {
+                                        <li class="pb-3 mb-3 border-bottom">
+                                            <div class="row align-items-center">
+                                                <div class="col-4 col-md-3 col-lg-3">
+                                                    <!-- Image -->
+                                                    <a href="#">
+                                                        <img class="img-fluid border" src="~/Content/assets/projectImages/Products/@item.ProductTbl.Image" alt="...">
+                                                    </a>
+                                                </div>
+                                                <div class="col-8 col-md-9 col-lg-9">
+                                                    <!-- Title -->
+                                                    <p class="mb-1">
+                                                        <a class="text-mode fw-500" href="#">@item.ProductTbl.Name</a>
+                                                        <span class="m-0 text-muted w-100 d-block">Frame @item.FrameTbl.FrameName, Size @item.OrderDetailsTbl.Size"</span>
+                                                        <span class="m-0 text-muted w-100 d-block"><i class="fa-solid fa-indian-rupee-sign"></i> @item.ProductTbl.Price <b>X</b> Qty @item.OrderDetailsTbl.Quantity</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+
+                                <ul class="list-unstyled m-0">
+                                    <li class="d-flex justify-content-between align-items-center mb-2">
+                                        <h6 class="me-2 text-body">Subtotal</h6><span class="text-end"><i class="fa-solid fa-indian-rupee-sign"></i>@TempData["GrandTotal"].00 </span>
+                                    </li>
+                                    <li class="d-flex justify-content-between align-items-center mb-2">
+                                        <h6 class="me-2 text-body">Shipping</h6><span class="text-end"><i class="fa-solid fa-indian-rupee-sign"></i>00.00</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                                        <h6 class="me-2">Grand Total</h6><span class="text-end text-mode"><i class="fa-solid fa-indian-rupee-sign"></i>@TempData["GrandTotal"].00</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Ordered Items List -->
+                    <!-- Order Details -->
+                    <div class="col-lg-8 col-xxl-9">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card rounded-2 border-0" style="box-shadow: 0 5px 15px rgba(0,0,0,0.20);">
+                                    <div class="card-header py-3 d-flex align-items-center">
+                                        <h6 class="m-0" style="color: #423328; font-family: 'Cinzel Decorative', cursive; ">Shipping Address</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="m-0">
+                                            @ViewBag.shipAdd.FirstName @ViewBag.shipAdd.LastName<br><br />
+                                            @ViewBag.shipAdd.Address,<br>
+                                            @ViewBag.shipAdd.City, @ViewBag.shipAdd.District, @ViewBag.shipAdd.State @ViewBag.shipAdd.PostCode<br><br />
+                                            (+91) @ViewBag.shipAdd.Mobile<br>
+                                            @ViewBag.shipAdd.Email
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card rounded-2 border-0" style="box-shadow: 0 5px 15px rgba(0,0,0,0.20);">
+                                    <div class="card-header py-3 d-flex align-items-center">
+                                        <h6 class="m-0" style="color: #423328; font-family: 'Cinzel Decorative', cursive; ">Billing Address</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="m-0">
+                                            @ViewBag.billAdd.FirstName @ViewBag.billAdd.LastName<br> <br />
+                                            @ViewBag.billAdd.Address,<br>
+                                            @ViewBag.billAdd.City, @ViewBag.billAdd.District, @ViewBag.billAdd.State @ViewBag.billAdd.PostCode<br><br />
+                                            (+91) @ViewBag.billAdd.Mobile<br>
+                                            @ViewBag.billAdd.Email
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="row g-4 mt-4">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header py-3 d-flex align-items-center">
+                                            <h6 class="m-0">Payment Info</h6><span class="ms-auto">
+                                                <img width="40" src="../../assets/img/flags/card-visa.png" title="" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row g-3">
+                                                <div class="col-12">
+                                                    <span class="small letter-spacing-2">
+                                                        CARD
+                                                        NUMBER
+                                                    </span>
+                                                    <h6 class="m-0 mt-1">xxxx xxxx xxxx 5050</h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <span class="small letter-spacing-2">
+                                                        NAME OF
+                                                        CARD
+                                                    </span>
+                                                    <h6 class="m-0 mt-1">Nancy Bayers</h6>
+                                                </div>
+                                                <div class="col-4">
+                                                    <span class="small letter-spacing-2">VALIDITY</span>
+                                                    <h6 class="m-0 mt-1">xx / xx</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex p-3">
+                                            <a class="link-mode text-uppercase fw-500" href="#">Edit </a><a class="link-danger text-uppercase fw-500 ms-auto" href="#">Remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+
+                    </div>
+                    <!-- End Order Details -->
+                </div>
+            </div>
+        </div>
+
+        <!--Bottom-->
+        <div class="bottom-box py-8" style="background-color: #eae3d9;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center">
+                        <h2 style="color: #423328; font-family: 'Cinzel Decorative', cursive; ">
+                            We are here to help
+                        </h2>
+
+                        <div class="my-2">
+                            <img class="img-fluid" src="https://tlr.stripocdn.email/content/guids/CABINET_8e5b3213aaa5a44b520869b2b72b55de/images/line_9_lGy.png" alt="">
+                        </div>
+
+                        <p class="m-0 mt-3">
+                            If you need help with anything please don't hesitate
+                            to email us, call us, or contact us via social media
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                                <a href="tel:@ViewBag.AboutDetails.cMobile1" class="btn btn-mode rounded-1 btn-sm" style="background: #423328; ">
+                                    <i class="fa fa-solid fa-phone"></i> @ViewBag.AboutDetails.cMobile1
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                                <a href="tel:@ViewBag.AboutDetails.cMobile2" class="btn btn-mode rounded-1 btn-sm" style="background: #423328; ">
+                                    <i class="fa fa-solid fa-phone"></i> @ViewBag.AboutDetails.cMobile2
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <a href="mailto:@ViewBag.AboutDetails.cEmail" class="btn btn-mode rounded-1 btn-sm" style="background: #423328; ">
+                                    <i class="fa fa-solid fa-envelope"></i> @ViewBag.AboutDetails.cEmail
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+    <!--Table -->
+</main>
+<!-- End Main -->

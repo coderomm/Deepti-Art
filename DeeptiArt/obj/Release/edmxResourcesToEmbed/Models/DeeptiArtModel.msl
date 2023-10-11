@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbdeeptiartsModelStoreContainer" CdmEntityContainer="dbdeeptiartsEntities">
+    <EntitySetMapping Name="AboutDetailsTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.AboutDetailsTbl">
+        <MappingFragment StoreEntitySet="AboutDetailsTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="cLogo" ColumnName="cLogo" />
+          <ScalarProperty Name="cSliderImage1" ColumnName="cSliderImage1" />
+          <ScalarProperty Name="cSliderImage2" ColumnName="cSliderImage2" />
+          <ScalarProperty Name="cSliderImage3" ColumnName="cSliderImage3" />
+          <ScalarProperty Name="cAbout" ColumnName="cAbout" />
+          <ScalarProperty Name="cAddress" ColumnName="cAddress" />
+          <ScalarProperty Name="cEmail" ColumnName="cEmail" />
+          <ScalarProperty Name="cMobile1" ColumnName="cMobile1" />
+          <ScalarProperty Name="cMobile2" ColumnName="cMobile2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FrameTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.FrameTbl">
+        <MappingFragment StoreEntitySet="FrameTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FrameName" ColumnName="FrameName" />
+          <ScalarProperty Name="FrameImage" ColumnName="FrameImage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OurTeamTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.OurTeamTbl">
+        <MappingFragment StoreEntitySet="OurTeamTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="about" ColumnName="about" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="testimonialReview" ColumnName="testimonialReview" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegisteredUsersTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.RegisteredUsersTbl">
+        <MappingFragment StoreEntitySet="RegisteredUsersTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.AdminTbl">
+        <MappingFragment StoreEntitySet="AdminTbl">
+          <ScalarProperty Name="uPassword" ColumnName="uPassword" />
+          <ScalarProperty Name="uName" ColumnName="uName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainCategoryTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.MainCategoryTbl">
+        <MappingFragment StoreEntitySet="MainCategoryTbl">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.ProductTbl">
+        <MappingFragment StoreEntitySet="ProductTbl">
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubcatName" ColumnName="SubcatName" />
+          <ScalarProperty Name="SCId" ColumnName="SCId" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CId" ColumnName="CId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategoryTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.SubCategoryTbl">
+        <MappingFragment StoreEntitySet="SubCategoryTbl">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="SubCategoryImage" ColumnName="SubCategoryImage" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReviewTables">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.ReviewTable">
+        <MappingFragment StoreEntitySet="ReviewTable">
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="useremail" ColumnName="useremail" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="profilephoto" ColumnName="profilephoto" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CartTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.CartTbl">
+        <MappingFragment StoreEntitySet="CartTbl">
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FrameID" ColumnName="FrameID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactEnquiryTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.ContactEnquiryTbl">
+        <MappingFragment StoreEntitySet="ContactEnquiryTbl">
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="umsg" ColumnName="umsg" />
+          <ScalarProperty Name="usub" ColumnName="usub" />
+          <ScalarProperty Name="uemail" ColumnName="uemail" />
+          <ScalarProperty Name="umob" ColumnName="umob" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cities">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.city">
+        <MappingFragment StoreEntitySet="city">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="districtid" ColumnName="districtid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="districts">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.district">
+        <MappingFragment StoreEntitySet="district">
+          <ScalarProperty Name="district_status" ColumnName="district_status" />
+          <ScalarProperty Name="district_description" ColumnName="district_description" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="district_title" ColumnName="district_title" />
+          <ScalarProperty Name="districtid" ColumnName="districtid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.state">
+        <MappingFragment StoreEntitySet="state">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="state_description" ColumnName="state_description" />
+          <ScalarProperty Name="state_title" ColumnName="state_title" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WishlistTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.WishlistTbl">
+        <MappingFragment StoreEntitySet="WishlistTbl">
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FrameID" ColumnName="FrameID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="WishlistID" ColumnName="WishlistID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillingDetailsTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.BillingDetailsTbl">
+        <MappingFragment StoreEntitySet="BillingDetailsTbl">
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="OrderNote" ColumnName="OrderNote" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Town" ColumnName="Town" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ShippingDetailsID" ColumnName="ShippingDetailsID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetailsTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.OrderDetailsTbl">
+        <MappingFragment StoreEntitySet="OrderDetailsTbl">
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FrameID" ColumnName="FrameID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.OrderTbl">
+        <MappingFragment StoreEntitySet="OrderTbl">
+          <ScalarProperty Name="OrderDateTime" ColumnName="OrderDateTime" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ShippingID" ColumnName="ShippingID" />
+          <ScalarProperty Name="BillingID" ColumnName="BillingID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShippingDetailsTbls">
+      <EntityTypeMapping TypeName="dbdeeptiartsModel.ShippingDetailsTbl">
+        <MappingFragment StoreEntitySet="ShippingDetailsTbl">
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="OrderNote" ColumnName="OrderNote" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Town" ColumnName="Town" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ShippingID" ColumnName="ShippingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

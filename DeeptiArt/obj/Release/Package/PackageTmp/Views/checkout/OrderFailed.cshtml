@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Order Failed";
+}
+
+<!-- Main -->
+<main>
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">Order Failed</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb dark-link m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap" href="~/">
+                                <i class="bi bi-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Order Failed</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Table -->
+    <div id="orderConfirm">
+
+        <!--Top-->
+        <div class="topBox py-8" style="background-color: #eae3d9;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center">
+                        <h1 style="color: #423328; font-family: 'Cinzel Decorative', cursive; font-size:100px;font-weight:bold;">400</h1>
+                        <h1 style="color: #423328;font-weight:bold;">Bad Request</h1>
+
+                        <div class="my-2">
+                            <img class="img-fluid" src="https://tlr.stripocdn.email/content/guids/CABINET_8e5b3213aaa5a44b520869b2b72b55de/images/line_9_lGy.png" alt="">
+                        </div>
+                        <div class="error-msg w-100 w-sm-60 mx-auto">
+                            <p class="m-0 fw-400 mt-3" style="text-align:justify">
+                                Dear Valued Customer,
+                                <br />
+                                We regret to inform you that we encountered a 400 Bad Request Error while processing your recent order. We understand that this may have caused inconvenience, and we would like to provide you with the necessary information to address this issue.
+                            </p>
+                            <p class="mt-4" style="text-align:justify">First and foremost, please rest assured that if your payment was deducted, it will be promptly refunded. Your trust is of utmost importance to us, and we are committed to ensuring that you are not charged for any unsuccessful transactions.</p>
+                            <br />
+                            <a href="~/" class="btn btn-mode btn-sm px-4 rounded-1" style="background: #423328; ">Back To Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Bottom-->
+        <div class="bottom-box pb-8" style="background-color: #eae3d9;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center">
+
+                        <div class="my-2">
+                            <img class="img-fluid" src="https://tlr.stripocdn.email/content/guids/CABINET_8e5b3213aaa5a44b520869b2b72b55de/images/line_9_lGy.png" alt="">
+                        </div>
+
+                        <p class="m-0 mt-3">
+                            If you need help with anything please don't hesitate
+                            to email us, call us, or contact us via social media
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                                <a href="tel:@ViewBag.AboutDetails.cMobile1" class="btn btn-mode rounded-1 btn-sm" style="background: #423328; ">
+                                    <i class="fa fa-solid fa-phone"></i> @ViewBag.AboutDetails.cMobile1
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                                <a href="tel:@ViewBag.AboutDetails.cMobile2" class="btn btn-mode rounded-1 btn-sm" style="background: #423328; ">
+                                    <i class="fa fa-solid fa-phone"></i> @ViewBag.AboutDetails.cMobile2
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <a href="mailto:@ViewBag.AboutDetails.cEmail" class="btn btn-mode rounded-1 btn-sm" style="background: #423328; ">
+                                    <i class="fa fa-solid fa-envelope"></i> @ViewBag.AboutDetails.cEmail
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!--Table -->
+</main>
+<!-- End Main -->

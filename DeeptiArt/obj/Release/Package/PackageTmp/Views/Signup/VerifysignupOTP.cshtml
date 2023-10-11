@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Verify OTP";
+}
+
+<!-- Main -->
+<main>
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">Verify OTP</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb dark-link m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap" href="~/">
+                                <i class="fa-solid fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap" href="@Url.RouteUrl("signup")">
+                                Signup
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Verify OTP</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="justify-content-center row">
+                <div class="col-lg-5 col-xxl-4">
+                    <div class="card">
+                        <div class="card-header bg-transparent py-3">
+                            <h3 class="h4 mb-0">Verify OTP</h3>
+                        </div>
+                        <div class="card-body">
+                            @using (Html.BeginForm("VerifysignupOTP", "signup", FormMethod.Post, new { @id = "verifySignupOTPForm" }))
+                            {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-3">
+                                            <label for="verifySignupOTP" class="form-label">
+                                                Enter 6-digit OTP sent to your Email <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" id="verifySignupOTP" name="verifySignupOTP" class="form-control" placeholder="OTP">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p id="verifySignupOTPAlertMsg" class="d-none response-msg-lbl"></p>
+
+                                <div class="form-group row align-items-center">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary" id="verifySignupOTPSubmit"> Verify OTP </button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+

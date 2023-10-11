@@ -1,0 +1,571 @@
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll.config
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\DeeptiArt.pdb
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe.config
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\csc.rsp
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe.config
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\csi.rsp
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.AppContext.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Collections.Immutable.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Console.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Globalization.Calendars.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Http.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Sockets.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Reflection.Metadata.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.ValueTuple.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe.config
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\vbc.rsp
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe.config
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\EntityFramework.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\Microsoft.Web.Infrastructure.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Razor.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\WebGrease.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\EntityFramework.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.Razor.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.pdb
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CoreCompileInputs.cache
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CopyComplete
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.dll
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.pdb
+D:\Om\ASP.NET Websites\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.AssemblyReference.cache
+D:\x\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.AssemblyReference.cache
+D:\x\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CoreCompileInputs.cache
+D:\x\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.dll
+D:\x\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.pdb
+D:\x\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll.config
+D:\x\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll
+D:\x\DeeptiArt\DeeptiArt\bin\DeeptiArt.pdb
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe.config
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\csc.rsp
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe.config
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\csi.rsp
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Managed.Core.targets
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.AppContext.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Collections.Immutable.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Console.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Globalization.Calendars.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Http.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Sockets.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Reflection.Metadata.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.ValueTuple.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XmlDocument.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe.config
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\vbc.rsp
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe
+D:\x\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe.config
+D:\x\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.dll
+D:\x\DeeptiArt\DeeptiArt\bin\EntityFramework.dll
+D:\x\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.dll
+D:\x\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\x\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Logging.dll
+D:\x\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.dll
+D:\x\DeeptiArt\DeeptiArt\bin\Microsoft.Web.Infrastructure.dll
+D:\x\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.dll
+D:\x\DeeptiArt\DeeptiArt\bin\PagedList.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Razor.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.dll
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.dll
+D:\x\DeeptiArt\DeeptiArt\bin\Twilio.dll
+D:\x\DeeptiArt\DeeptiArt\bin\WebGrease.dll
+D:\x\DeeptiArt\DeeptiArt\bin\EntityFramework.xml
+D:\x\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.xml
+D:\x\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.xml
+D:\x\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.xml
+D:\x\DeeptiArt\DeeptiArt\bin\PagedList.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.Razor.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.xml
+D:\x\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.xml
+D:\x\DeeptiArt\DeeptiArt\bin\Twilio.xml
+D:\x\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.pdb
+D:\x\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\x\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CopyComplete
+D:\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CoreCompileInputs.cache
+D:\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll.config
+D:\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll
+D:\DeeptiArt\DeeptiArt\bin\DeeptiArt.pdb
+D:\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe
+D:\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe.config
+D:\DeeptiArt\DeeptiArt\bin\roslyn\csc.rsp
+D:\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe
+D:\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe.config
+D:\DeeptiArt\DeeptiArt\bin\roslyn\csi.rsp
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Managed.Core.targets
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.AppContext.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Collections.Immutable.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Console.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Globalization.Calendars.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Http.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Sockets.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Reflection.Metadata.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.ValueTuple.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XmlDocument.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe
+D:\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe.config
+D:\DeeptiArt\DeeptiArt\bin\roslyn\vbc.rsp
+D:\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe
+D:\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe.config
+D:\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.dll
+D:\DeeptiArt\DeeptiArt\bin\BouncyCastle.Crypto.dll
+D:\DeeptiArt\DeeptiArt\bin\EntityFramework.dll
+D:\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Logging.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Web.Infrastructure.dll
+D:\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.dll
+D:\DeeptiArt\DeeptiArt\bin\Stripe.net.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Buffers.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Diagnostics.DiagnosticSource.dll
+D:\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Memory.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Numerics.Vectors.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Reflection.TypeExtensions.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Threading.Tasks.Extensions.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Razor.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.dll
+D:\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.dll
+D:\DeeptiArt\DeeptiArt\bin\WebGrease.dll
+D:\DeeptiArt\DeeptiArt\bin\EntityFramework.xml
+D:\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.xml
+D:\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.xml
+D:\DeeptiArt\DeeptiArt\bin\Stripe.net.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Buffers.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Diagnostics.DiagnosticSource.xml
+D:\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Memory.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Numerics.Vectors.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Threading.Tasks.Extensions.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Web.Razor.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.xml
+D:\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.xml
+D:\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.pdb
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CopyComplete
+D:\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.dll
+D:\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.pdb
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll.config
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\DeeptiArt.pdb
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe.config
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\csc.rsp
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe.config
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\csi.rsp
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Managed.Core.targets
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.AppContext.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Collections.Immutable.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Console.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Globalization.Calendars.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Http.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Sockets.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Reflection.Metadata.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.ValueTuple.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XmlDocument.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe.config
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\vbc.rsp
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe.config
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\BouncyCastle.Crypto.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\EntityFramework.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Logging.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.Web.Infrastructure.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Rotativa.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Stripe.net.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Buffers.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Diagnostics.DiagnosticSource.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Memory.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Numerics.Vectors.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Reflection.TypeExtensions.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Threading.Tasks.Extensions.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Razor.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\WebGrease.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\EntityFramework.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Stripe.net.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Buffers.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Diagnostics.DiagnosticSource.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Memory.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Numerics.Vectors.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Threading.Tasks.Extensions.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.Razor.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.pdb
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CoreCompileInputs.cache
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CopyComplete
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.dll
+D:\CoderOm\DataBoltaHai\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.pdb
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll.config
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\DeeptiArt.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\DeeptiArt.pdb
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\csc.exe.config
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\csc.rsp
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\csi.exe.config
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\csi.rsp
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Managed.Core.targets
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.AppContext.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Collections.Immutable.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Console.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Globalization.Calendars.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Http.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Net.Sockets.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Reflection.Metadata.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.ValueTuple.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XmlDocument.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\vbc.exe.config
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\vbc.rsp
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\roslyn\VBCSCompiler.exe.config
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\BouncyCastle.Crypto.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\EntityFramework.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.barcodes.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.bouncy-castle-connector.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.commons.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.forms.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.io.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.kernel.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.layout.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.pdfa.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.sign.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.styledxmlparser.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.svg.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itextsharp.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itextsharp.xmlworker.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Options.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Primitives.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Logging.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Web.Infrastructure.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Rotativa.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Stripe.net.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Buffers.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Diagnostics.DiagnosticSource.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Memory.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Numerics.Vectors.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Reflection.TypeExtensions.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Threading.Tasks.Extensions.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.ValueTuple.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Razor.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\WebGrease.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\EntityFramework.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\EntityFramework.SqlServer.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.barcodes.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.bouncy-castle-connector.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.commons.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.forms.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.io.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.kernel.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.layout.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.pdfa.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.sign.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.styledxmlparser.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itext.svg.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\itextsharp.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Options.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Primitives.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.IdentityModel.Tokens.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Newtonsoft.Json.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Stripe.net.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Buffers.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Diagnostics.DiagnosticSource.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Memory.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Numerics.Vectors.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Threading.Tasks.Extensions.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.ValueTuple.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Helpers.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Mvc.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Optimization.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.Razor.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Deployment.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\System.Web.WebPages.Razor.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Antlr3.Runtime.pdb
+D:\04-10-2023\DeeptiArt\DeeptiArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\04-10-2023\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CoreCompileInputs.cache
+D:\04-10-2023\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.csproj.CopyComplete
+D:\04-10-2023\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.dll
+D:\04-10-2023\DeeptiArt\DeeptiArt\obj\Debug\DeeptiArt.pdb
+D:\DeeptiArt\DeeptiArt\bin\itext.barcodes.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.bouncy-castle-connector.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.commons.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.forms.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.io.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.kernel.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.layout.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.pdfa.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.sign.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.styledxmlparser.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.svg.dll
+D:\DeeptiArt\DeeptiArt\bin\itextsharp.dll
+D:\DeeptiArt\DeeptiArt\bin\itextsharp.xmlworker.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Options.dll
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Primitives.dll
+D:\DeeptiArt\DeeptiArt\bin\Rotativa.dll
+D:\DeeptiArt\DeeptiArt\bin\System.ValueTuple.dll
+D:\DeeptiArt\DeeptiArt\bin\itext.barcodes.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.bouncy-castle-connector.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.commons.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.forms.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.io.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.kernel.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.layout.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.pdfa.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.sign.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.styledxmlparser.xml
+D:\DeeptiArt\DeeptiArt\bin\itext.svg.xml
+D:\DeeptiArt\DeeptiArt\bin\itextsharp.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Options.xml
+D:\DeeptiArt\DeeptiArt\bin\Microsoft.Extensions.Primitives.xml
+D:\DeeptiArt\DeeptiArt\bin\System.ValueTuple.xml

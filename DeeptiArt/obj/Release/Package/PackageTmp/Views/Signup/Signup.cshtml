@@ -1,0 +1,68 @@
+﻿@model DeeptiArt.Models.RegisteredUsersTbl
+@{
+    ViewBag.Title = "signup";
+}
+
+<main>
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">Register Now</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb dark-link m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap" href="~/">
+                                <i class="fa-solid fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Register</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="justify-content-center row">
+                <div class="col-lg-5 col-xxl-4">
+                    <div class="card">
+                        <div class="card-header bg-transparent py-3">
+                            <h3 class="h4 mb-0">Register</h3>
+                        </div>
+                        <div class="card-body">
+                            @using (Html.BeginForm("signup", "signup", FormMethod.Post, new { @id = "signupForm" }))
+                            {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-3">
+                                            <label for="Email" class="form-label"> Email<span class="text-danger">*</span></label>
+                                            <input type="email" id="Email" name="Email" class="form-control" placeholder="Enter Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-3">
+                                            <label for="Mobile" class="form-label"> Mobile<span class="text-danger">*</span></label>
+                                            <input type="tel" id="Mobile" name="Mobile" class="form-control" placeholder="Enter Mobile Number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p id="SignupLbl" class="d-none response-msg-lbl"></p>
+                                <h6 id="SignupLblMobReq" class="text-danger"></h6>
+
+                                <div class="form-group row align-items-center">
+                                    <div class="col">
+                                        <button id="sendOTPSignUP" type="submit" class="btn btn-primary"> Send OTP </button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

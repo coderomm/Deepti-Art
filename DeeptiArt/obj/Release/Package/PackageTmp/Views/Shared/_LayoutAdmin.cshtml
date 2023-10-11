@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Deepti Arts</title>
+    <!--favicon-->
+    <link rel="icon" href="https://deeptiarts.databoltahai.in/Content/assets/projectImages/About/logo.png" type="image/png">
+    <!--plugins-->
+    <script src="~/Content/AdminAssets/js/jquery.min.js"></script>
+
+    <link href="~/Content/AdminAssets/plugins/simplebar/css/simplebar.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/AdminAssets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/css/app.css" rel="stylesheet">
+    <link href="~/Content/AdminAssets/css/icons.css" rel="stylesheet">
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!--wrapper-->
+    <div class="wrapper">
+        <!--sidebar wrapper -->
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <div>
+                    <img src="https://deeptiarts.databoltahai.in/Content/assets/projectImages/About/logo.png" class="img-fluid" alt="Deepti Arts" />
+                </div>
+
+                <div class="toggle-icon ms-auto">
+                    <i class='bx bx-first-page'></i>
+                </div>
+            </div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <li>
+                    <a href="~/Admin" class="">
+                        <div class="parent-icon">
+                            <i class='bx bx-home'></i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                </li>
+
+                <li class="menu-label">Database Forms</li>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon">
+                            <i class='bx bx-hourglass'></i>
+                        </div>
+                        <div class="menu-title">Forms</div>
+                    </a>
+                    <ul>
+                        <li><a href="~/Admin"><i class="bx bx-right-arrow-alt"></i>Dashboard</a></li>
+                        <li><a href="~/Admin/AboutDetails"><i class="bx bx-right-arrow-alt"></i>Company Details</a></li>
+                        <li><a href="~/Admin/AddTeamMember"><i class="bx bx-right-arrow-alt"></i>Add Team</a></li>
+                        <li><a href="~/Admin/AddMainCategory"><i class="bx bx-right-arrow-alt"></i>Add Main Category</a></li>
+                        <li><a href="~/Admin/AddSubCategory"><i class="bx bx-right-arrow-alt"></i>Add Sub Category</a></li>
+                        <li><a href="~/Admin/AddFrame"><i class="bx bx-right-arrow-alt"></i>Add Frame</a></li>
+                        <li><a href="~/Admin/AddProduct"><i class="bx bx-right-arrow-alt"></i>Add Product</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--end navigation-->
+        </div>
+        <!--end sidebar wrapper -->
+        <!--start header -->
+        <header>
+            <div class="topbar d-flex align-items-center bg-dark shadow-none border-light-2 border-bottom">
+                <nav class="navbar navbar-expand">
+                    <div class="mobile-toggle-menu text-white me-3">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                    
+                    <div class="top-menu ms-auto">
+                        <ul class="navbar-nav align-items-end">
+                            <li class="nav-item">
+                                <button type="button" id="adminLogoutBtn" class="text-white btn btn-danger btn-sm rounded-1">
+                                    <i class='bx bxs-log-out'></i> Logout
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </nav>
+            </div>
+        </header>
+        <!--end header -->
+        <!--start page wrapper -->
+        @RenderBody()
+        <!--end page wrapper -->
+        <!--start overlay-->
+        <div class="search-overlay"></div>
+        <div class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        <!--Start Back To Top Button-->
+        <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+        <footer class="page-footer">
+            <p class="mb-0">Copyright © @DateTime.Now.Year. All right reserved.</p>
+        </footer>
+    </div>
+    <!--end wrapper-->
+
+    <!-- Bootstrap JS -->
+    <script src="~/Content/AdminAssets/js/bootstrap.bundle.min.js"></script>
+
+    <!--plugins-->
+    <script src="~/Content/AdminAssets/js/jquery.min.js"></script>
+    <script src="~/Content/AdminAssets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/Content/AdminAssets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <!--app JS-->
+    <script src="~/Content/AdminAssets/js/app.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

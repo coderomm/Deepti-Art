@@ -1,0 +1,205 @@
+﻿@model DeeptiArt.Models.AboutDetailsTbl
+
+@{
+    ViewBag.Title = "About";
+}
+
+<!-- Main -->
+<main>
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">About</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap text-reset" href="~/">
+                                <i class="fa-solid fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">About</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-3">
+                    <img src="~/Content/assets/projectImages/Products/AboutMainImg.jpg" alt="" title="" class="img-fluid">
+                </div>
+                <div class="col-lg-6 ps-lg-8 my-3">
+                    <h6 class="mb-3 text-gray-400">Our story</h6>
+                    <h2 class="mb-4">About our Store</h2>
+                    <p>@Model.cAbout</p>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Section --><!-- Section -->
+    <section class="section bg-gray-100">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="pe-lg-5">
+                        <h3 class="mb-3">Our vision</h3>
+                        <p class="m-0" style="text-align:justify;">
+                            At Deepti Arts, our vision is to be a global platform that celebrates and promotes artistic expression through paintings and sketches. We aspire to create a thriving online community where artists and art enthusiasts converge to explore, appreciate, and acquire unique pieces of art that resonate with their souls. We envision a world where the beauty of art transcends borders and cultures, enriching lives and connecting people through the power of creativity.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pe-lg-5">
+                        <h3 class="mb-3">Our mission</h3>
+                        <p class="m-0" style="text-align:justify;">
+                            Our mission at Deepti Arts is to empower artists to share their creations with the world while providing art lovers with a curated and accessible platform to discover and acquire exceptional artworks. We are committed to nurturing and supporting emerging talents, fostering creativity, and preserving the rich tapestry of artistic traditions. Through our platform, we aim to make the process of buying and selling art a seamless and delightful experience, enhancing the lives of both artists and collectors.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pe-lg-5">
+                        <h3 class="mb-3">Our goal</h3>
+                        <p class="m-0" style="text-align:justify;">
+                            Our primary goal is to become the go-to destination for art enthusiasts seeking quality paintings and sketches that inspire and captivate. We are dedicated to building a vast and diverse collection that caters to a wide range of tastes and preferences. We also aim to promote art education and awareness by providing resources and insights to our community.
+                            In summary, Deepti Arts aims to be a beacon of creativity, connecting artists and art lovers worldwide, and contributing to the ever-evolving landscape of art.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Section --><!-- Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h1">Team Members</h3>
+                    <p class="m-0 fw-400">Meet Our Creative Talented Team</p>
+                </div>
+            </div>
+            <div class="row g-3">
+                @foreach (var item in ViewBag.OurTeam)
+                {
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <img class="img-fluid card-img-top" src="~/Content/assets/projectImages/Team/@item.image" title="@item.name" alt="@item.name">
+                            <div class="card-body">
+                                <h4 class="h6 mb-1">@item.name</h4>
+                                @*<p class="mb-2">CEO &amp; Founder</p>*@
+                                @*<div class="nav dark-link">
+                                        <a class="icon icon-sm bg-primary text-white rounded-circle me-2" href="#">
+                                            <i class="fa-brands fa-facebook"></i>
+                                        </a>
+                                        <a class="icon icon-sm bg-primary text-white rounded-circle me-2" href="#">
+                                            <i class="fa-brands fa-twitter"></i>
+                                        </a>
+                                        <a class="icon icon-sm bg-primary text-white rounded-circle me-2" href="#">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a class="icon icon-sm bg-primary text-white rounded-circle me-2" href="#">
+                                            <i class="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+    <!-- Section -->
+    <section class="section bg-gray-100">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-6">
+                    <div class="text-center mb-30">
+                        <div class="display-5 mb-3 text-primary"><i class="fa-solid fa-check"></i></div>
+                        <h2 class="count">80+</h2><span>Arts done</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="text-center mb-30">
+                        <div class="display-5 mb-3 text-primary"><i class="fa-brands fa-typo3"></i></div>
+                        <h2 class="count">5+</h2><span>Categories</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="text-center mb-30">
+                        <div class="display-5 mb-3 text-primary"><i class="fa-solid fa-trophy"></i></div>
+                        <h2 class="count">20+</h2><span>Online sales</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="text-center mb-30 mrgn-none">
+                        <div class="display-5 mb-3 text-primary"><i class="fa-solid fa-smile"></i></div>
+                        <h2 class="count">30+</h2><span>Happy clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+    <!-- About us Start -->
+    <div class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="fw-500 h2 m-0">What our clients say?</h3>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                                          "slidesPerView": 1,
+                                          "spaceBetween": 24,
+                                          "loop": true,
+                                          "pagination": {
+                                            "el": ".swiper-pagination",
+                                            "clickable": true
+                                            },
+                                          "navigation": {
+                                            "nextEl": ".swiper-next-02",
+                                            "prevEl": ".swiper-prev-02"
+                                          },
+                                          "breakpoints": {
+                                            "600": {
+                                              "slidesPerView": 1
+                                            },
+                                            "991": {
+                                              "slidesPerView": 2
+                                            }
+                                          }
+                                    }'>
+                    <div class="swiper-wrapper">
+
+                        @foreach (var item in ViewBag.ReviewTables15)
+                        {
+                            <div class="swiper-slide">
+                                <div class="lead text-center border p-4">
+                                    <div class="d-inline-block mb-4">
+                                        <img class="rounded-circle"
+                                             src="~/Content/assets/projectImages/ReviewerProfileImage/@item.profilephoto" title="" alt="" width="100">
+                                    </div>
+                                    <h6 class="m-0 pt-2">@item.title</h6>
+
+                                    <p>@item.comment</p>
+                                    <h6 class="m-0 pt-2">By @item.username</h6>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-02"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-02"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </div>
+    <!-- About us End -->
+</main>
+<!-- End Main -->

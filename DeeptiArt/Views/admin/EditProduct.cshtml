@@ -1,0 +1,123 @@
+﻿@model DeeptiArt.Models.ProductTbl
+
+@{
+    ViewBag.Title = "Edit Product";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="page-content">
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">Forms</div>
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Form Layouts</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h6 class="mb-0 text-uppercase">Update Product & Details</h6>
+                <hr>
+                <div class="card border-top border-0 border-4 border-primary">
+                    <div class="card-body p-4">
+                        <div class="card-title d-flex align-items-center">
+
+                            <h5 class="mb-0 text-primary">Update Product & Details</h5>
+                        </div>
+                        <hr>
+                        @using (Html.BeginForm("EditProduct", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "row g-3" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <input name="rts" value="@Model.rts" hidden />
+                            <input name="status" value="true" hidden />
+
+                            <div class="col-lg-6">
+                                <label>Select Main Category</label>
+                                @Html.DropDownListFor(model => model.CId, ViewBag.MainCategoryList as SelectList, "Select Main Category", new { @class = "form-control", required = "required" })
+                                @Html.Hidden("CatName", null, new { id = "CatName" })
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label>Select Sub Category</label>
+                                @Html.DropDownListFor(model => model.SCId, ViewBag.SubCategoryList as SelectList, "Select Sub SubCategory", new { @class = "form-control", required = "required" })
+                                @Html.Hidden("SubcatName", null, new { id = "SubcatName" })
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="Name" class="form-label">Product Name</label>
+                                <div class="input-group">
+                                    <input value="@Model.Name" name="Name" type="text" class="form-control" id="Name" placeholder="Product Name">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label for="Image" class="form-label">Product Image</label>
+                                <div class="input-group">
+                                    <input name="Image" class="form-control" type="file" id="Image">
+                                    <input value="@Model.Image" name="Image" type="text" hidden>
+                                    <img src="@Url.Content("~/Content/Assets/projectImages/Products/" + Model.Image)" class="img-fluid" height="50" width="50" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="Price" class="form-label">Product Price</label>
+                                <div class="input-group">
+                                    <input value="@Model.Price" name="Price" type="text" class="form-control" id="Price" placeholder="Product Price">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <label for="Details" class="form-label">Product About Section</label>
+                                <textarea name="Details" class="form-control" id="Details" placeholder="Enter About Product" rows="3">@Model.Details</textarea>
+                            </div>
+
+
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn btn-primary me-4"><i class="bx bxs-check-circle"></i> Update</button>
+                                <a href="~/Admin/AddProduct" class="btn btn-outline-primary"><i class="bx bxs-x-circle"></i> Cancle</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    //alert($('#Cid').val());
+    $(function () {
+        $('#CId').change(function () {
+            var selectedCId = $('#CId').val()
+            $.getJSON('/admin/SubCategoryList/' + selectedCId, function (data) {
+
+                var items = '';
+                var dropdown = document.getElementById("SCId");
+                $(dropdown).empty();
+
+                var newOption1 = document.createElement("option");
+                newOption1.innerHTML = "Select City";  //innerHTML & not Text
+                newOption1.value = "0";
+                dropdown.options.add(newOption1);
+
+                $.each(data, function (i, district) {
+                    var newOption = document.createElement("option");
+                    newOption.innerHTML = district.Text;  //innerHTML & not Text
+                    newOption.value = district.Value;
+                    dropdown.options.add(newOption);
+                });
+            });
+        });
+    });
+</script>

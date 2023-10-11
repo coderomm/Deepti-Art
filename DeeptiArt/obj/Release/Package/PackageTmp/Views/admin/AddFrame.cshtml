@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Add Frame";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="page-content">
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">Forms</div>
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Form Layouts</li>
+                    </ol>
+                </nav>
+            </div>
+
+        </div>
+        <!--end breadcrumb-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h6 class="mb-0 text-uppercase">Add Frame</h6>
+                <hr>
+                <div class="card border-top border-0 border-4 border-primary">
+                    <div class="card-body p-4">
+                        <div class="card-title d-flex align-items-center">
+
+                            <h5 class="mb-0 text-primary">Add Frame</h5>
+                        </div>
+                        <hr>
+                        @using (Html.BeginForm("AddFrame", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "row g-3" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="col-lg-6 col-12">
+                                <label for="FrameName" class="form-label">Frame Name</label>
+                                <div class="input-group">
+                                    <input name="FrameName" class="form-control" type="text" id="FrameName" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <label for="FrameImage" class="form-label">Frame Image</label>
+                                <div class="input-group">
+                                    <input name="FrameImage" class="form-control" type="file" id="FrameImage" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary"><i class="bx bxs-plus-square"></i> Add Frame</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h6 class="mb-0 text-uppercase">Frame DataTable</h6>
+        <hr>
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Frame</th>
+                                <th>Image</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in @ViewBag.Frame)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.FrameName</td>
+                                    <td><img src="@Url.Content("~/Content/Assets/projectImages/Frame/" + @item.FrameImage)" class="img-fluid" height="50" width="50" /></td>
+                                    <td><a href="@Url.Action("DeleteFrame", "Admin",new {id=item.Id})" class="btn btn-danger btn-sm"><i class="bx bxs-trash"></i> Delete</a></td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

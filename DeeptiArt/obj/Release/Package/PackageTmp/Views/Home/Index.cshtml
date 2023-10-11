@@ -1,0 +1,638 @@
+﻿@model IEnumerable<DeeptiArt.Models.ProductTbl>
+
+@{
+    ViewBag.Title = "Welcome";
+}
+
+
+<!-- Main -->
+<main>
+    <!-- Home Section -->
+    <div class="swiper swiper-container" data-swiper-options='{
+                  "slidesPerView": 1,
+                  "spaceBetween": 0,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "nextEl": ".swiper-next-01",
+                    "prevEl": ".swiper-prev-01"
+                  }
+                }'>
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="bg-no-repeat bg-right-center"
+                     style="background-size: contain; background-image: url(../../Content/assets/projectImages/About/@ViewBag.cSliderImage1 );">
+                    <div class="container">
+                        <div class="row min-vh-50 min-vh-md-65 min-vh-lg-75 align-items-center">
+                            <div class="col-lg-6">
+                                <h6 class="text-uppercase text-dark fw-300 letter-spacing-3 mb-4">
+                                    Divine Expressions
+                                </h6>
+                                <h1 class="text-uppercase text-dark fw-300 letter-spacing-3 display-5">
+                                    Explore the Spiritual World Through My Sketches
+                                </h1>
+                                <div class="pt-3">
+                                    <a class="link-effect-02 letter-spacing-3 text-dark text-uppercase"
+                                       href="~/collections">
+                                        Shop Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="bg-no-repeat bg-right-center"
+                     style="background-size:contain;background-image: url(../../Content/assets/projectImages/About/@ViewBag.cSliderImage2);">
+                    <div class="container">
+                        <div class="row min-vh-50 min-vh-md-65 min-vh-lg-75 align-items-center">
+                            <div class="col-lg-6">
+                                <h6 class="text-uppercase text-dark fw-300 letter-spacing-3 mb-4">
+                                    Embracing Creativity
+                                </h6>
+                                <h1 class="text-uppercase text-dark fw-300 letter-spacing-3 display-5">
+                                    Dive into the World of Sketching with Deepti Heda
+                                </h1>
+                                <div class="pt-3">
+                                    <a class="link-effect-02 letter-spacing-3 text-dark text-uppercase"
+                                       href="~/collections">
+                                        Shop Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="bg-no-repeat bg-right-center"
+                     style="background-size: contain; background-image: url(../../Content/assets/projectImages/About/@ViewBag.cSliderImage3 );">
+                    <div class="container">
+                        <div class="row min-vh-50 min-vh-md-65 min-vh-lg-75 align-items-center">
+                            <div class="col-lg-6">
+                                <h6 class="text-uppercase text-dark fw-300 letter-spacing-3 mb-4">
+                                    Artistry Unveiled
+                                </h6>
+                                <h1 class="text-uppercase text-dark fw-300 letter-spacing-3 display-5">
+                                    Discover the Beauty of Light and Shade in My Sketches
+                                </h1>
+                                <div class="pt-3">
+                                    <a class="link-effect-02 letter-spacing-3 text-dark text-uppercase"
+                                       href="~/collections">
+                                        Shop Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-arrow-style-01 swiper-next swiper-next-01 d-none d-lg-inline-flex">
+            <i class="fa fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="swiper-arrow-style-01 swiper-prev swiper-prev-01 d-none d-lg-inline-flex">
+            <i class="fa fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- End Home Section -->
+    <!-- Product section -->
+    <section class="section bg-gray-100">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mt-2">Deepti Art Gallery</h3>
+                    <p class="fs-6 m-0">Explore Curated Intricate Art Styles</p>
+                </div>
+            </div>
+            <div class="row g-3 g-lg-4">
+                <!-- Product Box -->
+                @foreach (var item in Model.Take(8))
+                {
+                    <div class="col-6 col-lg-3">
+                        <div class="product-card-1 rounded-1 data-product-id-container-div" data-product-id="@item.Id">
+                            <div class="product-card-image">
+                                <div class="badge-ribbon">
+                                    @*<span class="badge bg-danger">Sale</span>*@
+                                </div>
+                                <div class="product-action">
+
+                                    <button type="submit" class="add-to-wishlist-btn btn btn-outline-primary" style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg); border-color: var(--bs-btn-hover-border-color);">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <a href="@Url.Action("collectiondetails", "collections", new { productname = Url.Encode(item.Name.Replace(" ", "-").ToLower()) })" class="btn btn-outline-primary" style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg); border-color: var(--bs-btn-hover-border-color);">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </a>
+
+                                    <a data-bs-toggle="modal" data-bs-target="#quick_view_@item.Id" href="javascript:void(0)"
+                                       class="btn btn-outline-primary" style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg); border-color: var(--bs-btn-hover-border-color);">
+                                        <i class="fa-solid fa-info"></i>
+                                    </a>
+                                </div>
+                                <div class="product-media">
+                                    <a href="@Url.Action("collectiondetails", "collections", new { productname = Url.Encode(item.Name.Replace(" ", "-").ToLower()) })">
+                                        <img class="img-fluid" src="~/Content/assets/projectImages/Products/@item.Image" title="@item.Name" alt="@item.Name">
+                                    </a>
+                                    <div class="product-cart-btn">
+                                        <button type="button" class="direct-add-to-cart-btn btn btn-primary btn-sm w-100">
+                                            <i class="fa-solid fa-cart-shopping"></i> Add to cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card-info">
+                                <div class="product-meta small">
+                                    <a href="@Url.RouteUrl("catcollections", new {catname = Url.Encode(item.CatName.Replace(" ", "-").ToLower()) })">@item.CatName</a>,
+                                    <a href="@Url.RouteUrl("subcatcollections", new {catname = Url.Encode(item.CatName.Replace(" ", "-").ToLower()), subcatname = Url.Encode(item.SubcatName.Replace(" ", "-").ToLower()) })">@item.SubcatName</a>
+                                </div>
+                                <div class="rating-star text">
+                                    @{
+                                        int totalreviews = 0;
+                                        int totalrating = 0;
+                                        double avgrating = 0;
+                                        double emptystarsoutoffive = 0;
+                                    }
+                                    @foreach (var Reviewitem in ViewBag.ReviewTables)
+                                    {
+                                        if (item.Id == Reviewitem.productid)
+                                        {
+                                            totalreviews++;
+                                            totalrating += Convert.ToInt32(Reviewitem.rating);
+                                        }
+
+                                        avgrating = totalreviews > 0 ? (double)totalrating / totalreviews : 0;
+                                        avgrating = Math.Round(avgrating, 2); // Round to two decimal places
+                                        emptystarsoutoffive = 5 - avgrating;
+                                    }
+                                    <span>
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            if (i <= avgrating)
+                                            {
+                                                <i class="fa-solid fa-star active"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="fa-regular fa-star"></i>
+                                            }
+                                        }
+                                    </span>
+
+                                    <span>(@(totalreviews < 1 ? "0 review" : (totalreviews > 1 ? totalreviews + " reviews" : " review")))</span>
+                                </div>
+                                <h6 class="product-title">
+                                    <a href="@Url.Action("collectiondetails", "collections", new { productname = Url.Encode(item.Name.Replace(" ", "-").ToLower()) })">
+                                        @item.Name
+                                    </a>
+                                </h6>
+                                <div class="product-price">
+                                    @{ int dummyprice = Convert.ToInt32(item.Price) + 160; }
+                                    <span class="text-primary"><i class="fa-solid fa-indian-rupee-sign"></i>@item.Price.<small>00</small></span>
+                                    <del class="fs-sm text-muted"><i class="fa-solid fa-indian-rupee-sign"></i>@dummyprice.<small>00</small></del>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick View  -->
+                        <div class="modal-quick-view modal fade" id="quick_view_@item.Id" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-xl">
+                                <div class="modal-content">
+                                    <button class="btn-close position-absolute end-0 top-0 me-2 mt-2 z-index-1"
+                                            type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <div class="modal-body p-3">
+
+                                        <div class="row">
+                                            <!-- Product Gallery -->
+                                            <div class="col-lg-6 lightbox-gallery product-gallery">
+                                                <img src="~/Content/assets/projectImages/Products/@item.Image" class="img-fluid" title="" alt="">
+                                                <div class="product-description mt-3">
+                                                    <label class="fs-6 text-mode pb-2 fw-500">Offer Offer Offer !</label>
+                                                    <div class="count-down count-down-02 mb-3" data-countdown="October 10, 2023 15:00:00"></div>
+                                                </div>
+                                            </div>
+                                            <!-- End Product Gallery -->
+                                            <!-- Product Details -->
+                                            <div class="col-lg-6">
+
+                                                @using (Html.BeginForm("AddToCart", "cart", FormMethod.Post, new { @class = "AddToCartForm" }))
+                                                {
+                                                    <input type="hidden" value="1" name="FrameID" />
+                                                    <input type="hidden" value="@item.Id" name="ProductID" />
+
+                                                    <div class="product-detail pt-4">
+                                                        <div class="products-brand pb-2">
+                                                            <span>@item.CatName, @item.SubcatName</span>
+                                                        </div>
+                                                        <div class="products-title mb-2">
+                                                            <h4 class="h4">@item.Name</h4>
+                                                        </div>
+                                                        <div class="rating-star text small pb-4">
+                                                            @{
+                                                                totalreviews = 0;
+                                                                totalrating = 0;
+                                                                avgrating = 0;
+                                                                emptystarsoutoffive = 0;
+                                                            }
+                                                            @foreach (var Reviewitem in ViewBag.ReviewTables)
+                                                            {
+                                                                if (item.Id == Reviewitem.productid)
+                                                                {
+                                                                    totalreviews++;
+                                                                    totalrating += Convert.ToInt32(Reviewitem.rating);
+                                                                }
+
+                                                                avgrating = totalreviews > 0 ? (double)totalrating / totalreviews : 0;
+                                                                avgrating = Math.Round(avgrating, 2); // Round to two decimal places
+                                                                emptystarsoutoffive = 5 - avgrating;
+                                                            }
+                                                            <span>
+                                                                @for (int i = 1; i <= 5; i++)
+                                                                {
+                                                                    if (i <= avgrating)
+                                                                    {
+                                                                        <i class="fa-solid fa-star active"></i>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <i class="fa-regular fa-star"></i>
+                                                                    }
+                                                                }
+                                                            </span>
+
+                                                            <span>(@(totalreviews < 1 ? "0 review" : (totalreviews > 1 ? totalreviews + " reviews" : " review")))</span>
+                                                        </div>
+
+                                                        <p style="text-align:justify;">@item.Details</p>
+
+                                                        <div class="product-attribute">
+                                                            <label class="fs-6 text-mode pb-2 fw-500">Frame Sizes ( in inches )</label>
+                                                            <div class="nav-thumbs nav mb-3">
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_6" value="6" checked="">
+                                                                    <label class="radio-text-label" for="inch_6">6</label>
+                                                                </div>
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_7" value="7">
+                                                                    <label class="radio-text-label" for="inch_7">7</label>
+                                                                </div>
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_8" value="8">
+                                                                    <label class="radio-text-label" for="inch_8">8</label>
+                                                                </div>
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_9" value="9">
+                                                                    <label class="radio-text-label" for="inch_9">9</label>
+                                                                </div>
+
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_10" value="10">
+                                                                    <label class="radio-text-label" for="inch_10">10</label>
+                                                                </div>
+
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_11" value="11">
+                                                                    <label class="radio-text-label" for="inch_11">11</label>
+                                                                </div>
+
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_12" value="12">
+                                                                    <label class="radio-text-label" for="inch_12">12</label>
+                                                                </div>
+
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_13" value="13">
+                                                                    <label class="radio-text-label" for="inch_13">13</label>
+                                                                </div>
+
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_14" value="14">
+                                                                    <label class="radio-text-label" for="inch_14">14</label>
+                                                                </div>
+
+                                                                <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                                                    <input class="form-check-input" type="radio" name="Size" id="inch_15" value="15">
+                                                                    <label class="radio-text-label" for="inch_15">15</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-price fs-3 fw-500 mb-2">
+                                                            @{ dummyprice = Convert.ToInt32(item.Price) + 160; }
+
+                                                            <del class="text-muted fs-6"><i class="fa-solid fa-indian-rupee-sign"></i><small>@dummyprice.00</small></del>
+
+                                                            <span class="text-primary"><i class="fa-solid fa-indian-rupee-sign"></i>@item.Price</span>
+                                                        </div>
+
+                                                        <p id="addtocartalert" class="text-danger"></p>
+
+                                                        <label class="fs-6 text-mode pt-1 fw-500">Select Quantity</label>
+
+
+                                                        <div class="product-detail-actions d-flex flex-wrap pt-3">
+                                                            <div class="cart-qty me-3 mb-3">
+                                                                <div class="dec qty-btn qty_btn">-</div>
+                                                                <input class="product-cart-qty-input form-control" type="text" name="pQuantity" value="1">
+                                                                <div class="inc qty-btn qty_btn">+</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-detail-actions d-flex flex-wrap pt-3">
+
+                                                            <div class="cart-button mb-3 d-flex">
+                                                                <button type="submit" class="btn btn-mode btn-sm rounded-2 me-3"> <i class="fi-shopping-cart"></i> Add to cart </button>
+
+                                                                <a class="add-to-wishlist-btn btn btn-sm btn-outline-primary rounded-1 me-3 btn-sm">
+                                                                    <i class="fa-regular fa-heart"></i> Wishlist
+                                                                </a>
+
+                                                                <a href="@Url.Action("collectiondetails", "collections", new { productname = Url.Encode(item.Name.Replace(" ", "-").ToLower()) })" class="btn btn-sm btn-outline-primary rounded-1 me-3 btn-sm">
+                                                                    <i class="fa-regular fa-eye"></i> View
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                }
+                                            </div>
+                                            <!-- End Product Details -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Quick View  -->
+
+                    </div>
+                }
+                <!-- End Product Box -->
+            </div>
+            <div class="mt-4 d-flex justify-content-center align-items-center">
+                <a href="~/collections" class="btn btn-mode rounded-1">
+                    View All <i class="fa-solid fa-chevron-circle-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- End Product section -->
+    
+    <!-- Sketch Product section -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mt-2">Sketch Art</h3>
+                    <p class="fs-6 m-0">Explore Classy Sketchy Arts</p>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                              "slidesPerView": 2,
+                              "spaceBetween": 10,
+                              "loop": true,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "clickable": true
+                                },
+                              "navigation": {
+                                "nextEl": ".swiper-next-02",
+                                "prevEl": ".swiper-prev-02"
+                              },
+                              "autoplay": {
+                                "delay": 1500,
+                                "disableOnInteraction": false
+                              },
+                              "breakpoints": {
+                                "600": {
+                                  "slidesPerView": 3
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 15
+                                },
+                                "1200": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 24
+                                }
+                              }
+                        }'>
+                    <div class="swiper-wrapper">
+                        <!-- Product Box -->
+                        @foreach (var item in (List<DeeptiArt.Models.ProductTbl>)@ViewBag.SketchCategoryProducts)
+                        {
+                            { Html.RenderPartial("_Product", item); }
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-02"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-02"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </section>
+    <!-- Mandala Art section -->
+    <!-- Product section -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mt-2">Mandala Art</h3>
+                    <p class="fs-6 m-0">Explore Classy Sketchy Arts</p>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                              "slidesPerView": 2,
+                              "spaceBetween": 10,
+                              "loop": true,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "clickable": true
+                                },
+                              "navigation": {
+                                "nextEl": ".swiper-next-03",
+                                "prevEl": ".swiper-prev-03"
+                              },
+                              "autoplay": {
+                                "delay": 3500,
+                                "disableOnInteraction": false
+                              },
+                              "breakpoints": {
+                                "600": {
+                                  "slidesPerView": 3
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 15
+                                },
+                                "1200": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 24
+                                }
+                              }
+                        }'>
+                    <div class="swiper-wrapper">
+                        <!-- Product Box -->
+                        @foreach (var item in (List<DeeptiArt.Models.ProductTbl>)@ViewBag.MandalaCategoryProducts)
+                        {
+                            { Html.RenderPartial("_Product", item); }
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-03"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-03"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </section>
+    <!-- End Product section -->
+    <!-- Product section -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mt-2">Coloured Art</h3>
+                    <p class="fs-6 m-0">Explore Classy Sketchy Arts</p>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                              "slidesPerView": 2,
+                              "spaceBetween": 10,
+                              "loop": true,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "clickable": true
+                                },
+                              "navigation": {
+                                "nextEl": ".swiper-next-04",
+                                "prevEl": ".swiper-prev-04"
+                              },
+                              "autoplay": {
+                                "delay": 3500,
+                                "disableOnInteraction": false
+                              },
+                              "breakpoints": {
+                                "600": {
+                                  "slidesPerView": 3
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 15
+                                },
+                                "1200": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 24
+                                }
+                              }
+                        }'>
+                    <div class="swiper-wrapper">
+                        <!-- Product Box -->
+                        @foreach (var item in (List<DeeptiArt.Models.ProductTbl>)@ViewBag.ColouredCategoryProducts)
+                        {
+                            { Html.RenderPartial("_Product", item); }
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-04"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-04"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </section>
+    <!-- End Product section -->
+    
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mb-2">Testimonials</h3>
+                    <p class="fs-6 m-0">
+                        More than 100+ Happy Customers
+                    </p>
+                    <p class="fs-6 m-0">Here's what our customers have to say...</p>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                              "slidesPerView": 1,
+                              "spaceBetween": 10,
+                              "loop": true,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "clickable": true
+                                },
+                              "navigation": {
+                                "nextEl": ".swiper-next-09",
+                                "prevEl": ".swiper-prev-09"
+                              },
+                              "autoplay": {
+                                "delay": 3500,
+                                "disableOnInteraction": false
+                              },
+                              "breakpoints": {
+                                "600": {
+                                  "slidesPerView": 3
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 15
+                                },
+                                "1200": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 24
+                                }
+                              }
+                        }'>
+                    <div class="swiper-wrapper">
+                        <!-- Product Box -->
+                        @foreach (var item in ViewBag.ReviewTables15)
+                        {
+                            <div class="swiper-slide">
+                                <div class="product-card-6">
+                                    <div class="text-center bg-mode-re p-3 m-2   rounded-2" style="box-shadow: 0 5px 15px rgba(0,0,0,0.20);">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <img class="img-fluid w-25 rounded-circle float-start" src="~/Content/assets/projectImages/ReviewerProfileImage/@item.profilephoto" title="@item.username" alt="@item.username">
+                                            <div class="ms-2 float-end">
+                                                <h6><a class="text-reset" href="#">@item.username</a></h6>
+                                                <div class="rating-star text">
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <h6><a class="text-reset" href="#">@item.title</a></h6>
+                                            <p class="m-0 lni-text-align-justify">"@item.comment"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-09"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-09"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonials -->
+</main>
+<!-- End Main -->

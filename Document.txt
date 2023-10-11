@@ -1,0 +1,15 @@
+select * from sys.tables
+select * from CartTbl
+select * from OrderTbl
+select * from OrderDetailsTbl
+select * from ShippingDetailsTbl
+select * from BillingDetailsTbl
+
+truncate table OrderTbl
+truncate table OrderDetailsTbl
+truncate table ShippingDetailsTbl
+truncate table BillingDetailsTbl
+
+
+
+

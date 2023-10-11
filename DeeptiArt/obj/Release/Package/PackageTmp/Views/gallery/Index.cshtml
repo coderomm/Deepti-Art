@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "gallery";
+}
+
+<!-- Main -->
+<main>
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100 border-top border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">Gallery</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap text-reset" href="~/">
+                                <i class="fa-solid fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Gallery</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Shop Section -->
+    <section class="py-6">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="row g-3">
+                        <!-- Product Box -->
+                        @foreach (var item in ViewBag.Gallery)
+                        {
+                            <div class="col-6 col-md-3 col-lg-3">
+                                <div class="product-card-3">
+                                    <div class="product-card-image">
+                                        <div class="badge-ribbon"><span class="badge bg-danger">100% Original</span></div>
+                                        <div class="product-action">
+                                            <a href="@Url.RouteUrl("collectiondetails", new {productname = Url.Encode(item.Name.Replace(" ", "-").ToLower())})" class="btn btn-dark">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                        <div class="product-media">
+                                            <a href="@Url.RouteUrl("collectiondetails", new {productname = Url.Encode(item.Name.Replace(" ", "-").ToLower())})">
+                                                <img class="img-fluid"
+                                                     src="~/Content/assets/projectImages/Products/@item.Image" title="@Url.Encode(item.Name.Replace(" ", "-").ToLower())"
+                                                     alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-info">
+                                        <h6 class="product-title"><a href="@Url.RouteUrl("collectiondetails", new {productname = Url.Encode(item.Name.Replace(" ", "-").ToLower())})">@item.Name</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- End Main -->

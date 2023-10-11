@@ -1,0 +1,243 @@
+﻿@model IEnumerable<DeeptiArt.Models.CartProductViewModel>
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<main>
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">Checkout</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb dark-link m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item"><a class="text-nowrap" href="~/">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-nowrap" href="~/cart">Cart</a></li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Checkout</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Section -->
+    <section class="section">
+        <div class="container">
+                @using (Html.BeginForm("CreateCheckoutSessions", "checkout", FormMethod.Post, new { @id = "InitiateOrderForm", @class="row align-items-start" }))
+                {
+                    <div class="col-md-7">
+                        <!-- Form -->
+                        <!-- Shipping Details Heading -->
+                        <div class="shippingTitle d-flex align-items-center flex-row mb-4" style="cursor:pointer">
+                            <h6 class="h3 mb-0 d-inline-block">Shipping Details</h6>
+                            <span id="shippingSuccessLbl" class="ms-auto" style="display: none; color: #152C5B; padding: 0.1rem 1rem; font-size: .9rem;">-- Your shipping details submited !</span>
+                        </div>
+                        <!-- Shipping Details -->
+                        <div class="row mb-5 gy-4" id="checkout-shipping-container">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Shipping_First_Name">First Name *</label>
+                                <input class="form-control" id="checkout_Shipping_First_Name" name="checkout_Shipping_First_Name" type="text" placeholder="First Name">
+                                <p id="FirstNameShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Shipping_Last_Name">Last Name *</label>
+                                <input class="form-control" id="checkout_Shipping_Last_Name" name="checkout_Shipping_Last_Name" type="text" placeholder="Last Name">
+                                <p id="LastNameShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Shipping_Email"> Email * </label>
+                                <input class="form-control" id="checkout_Shipping_Email" name="checkout_Shipping_Email" type="email" placeholder="Email">
+                                <p id="EmailShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Shipping_Mobile">Mobile Phone *</label>
+                                <input class="form-control" id="checkout_Shipping_Mobile" name="checkout_Shipping_Mobile" type="tel" placeholder="Mobile Phone">
+                                <p id="MobileShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="checkout_Shipping_Address">Address *</label>
+                                <input class="form-control" id="checkout_Shipping_Address" name="checkout_Shipping_Address" type="text" placeholder="Address Line">
+                                <p id="AddressShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="statelist">State *</label>
+                                <select id="statelist" class="statelist form-select">
+                                    <option value="0">State</option>
+                                </select>
+                                <input type="hidden" id="selectedStateText" name="selectedStateText" value="" />
+                                <p id="statelistShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="districtlist">District *</label>
+                                <select id="districtlist" class="districtlist form-select">
+                                    <option value="0">District</option>
+                                </select>
+                                <input type="hidden" id="selectedDistrictText" name="selectedDistrictText" value="" />
+                                <p id="districtlistShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="citylist">City *</label>
+                                <select id="citylist" class="citylist form-select">
+                                    <option value="0">City</option>
+                                </select>
+                                <input type="hidden" id="selectedCityText" name="selectedCityText" value="" />
+                                <p id="citylistShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Shipping_Town">Local Town *</label>
+                                <input class="form-control" id="checkout_Shipping_Town" name="checkout_Shipping_Town" type="text" placeholder="Town">
+                                <p id="TownShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Shipping_PostCode">ZIP / Postcode *</label>
+                                <input class="form-control" id="checkout_Shipping_PostCode" name="checkout_Shipping_PostCode" type="text" placeholder="ZIP / Postcode">
+                                <p id="PostCodeShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="checkout_Shipping_OrderNote">Order Note *</label>
+                                <input class="form-control" id="checkout_Shipping_OrderNote" name="checkout_Shipping_OrderNote" type="text" placeholder="Order Note">
+                                <p id="OrderNoteShippingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12">
+                                <!-- Button -->
+                                <button id="checkout-shipping-continue" class="btn btn-mode btn-sm rounded-1" type="button"> Continue </button>
+                            </div>
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div id="isSameAddressDiv" class="form-check mb-5" role="tab" style="display:none;">
+                            <input class="form-check-input" id="checkoutBillingSameAddress" type="checkbox" checked>
+                            <label class="form-check-label" for="checkoutBillingSameAddress">My billing address is the same as my shipping address.</label>
+                        </div>
+
+                        <!-- Billing Details Heading -->
+                        <div class="billingTitle d-flex align-items-center flex-row mb-4" style="cursor:pointer">
+                            <h6 class="h3 mb-0 d-inline-block">Billing Details</h6>
+                            <span id="billingSuccessLbl" class="ms-auto" style="display: none; color: #152C5B; padding: 0.1rem 1rem; font-size: .9rem;">-- Your billing details submited !</span>
+                        </div>
+                        <!-- Billing Details -->
+                        <div id="checkout-billing-container" class="row mb-4 gy-4" style="display:none;">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Billing_First_Name">First Name *</label>
+                                <input class="form-control" id="checkout_Billing_First_Name" name="checkout_Billing_First_Name" type="text" placeholder="First Name">
+                                <p id="FirstNameBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Billing_Last_Name">Last Name *</label>
+                                <input class="form-control" id="checkout_Billing_Last_Name" name="checkout_Billing_Last_Name" type="text" placeholder="Last Name">
+                                <p id="LastNameBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Billing_Email"> Email * </label>
+                                <input class="form-control" id="checkout_Billing_Email" name="checkout_Billing_Email" type="email" placeholder="Email">
+                                <p id="EmailBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Billing_Mobile">Mobile Phone *</label>
+                                <input class="form-control" id="checkout_Billing_Mobile" name="checkout_Billing_Mobile" type="tel" placeholder="Mobile Phone">
+                                <p id="MobileBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="checkout_Billing_Address">Address *</label>
+                                <input class="form-control" id="checkout_Billing_Address" name="checkout_Billing_Address" type="text" placeholder="Address Line">
+                                <p id="AddressBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="billingStatelist">State *</label>
+                                <select id="billingStatelist" class="statelist form-select">
+                                    <option value="0">State</option>
+                                </select>
+                                <input type="hidden" id="selectedBillingStateText" name="selectedBillingStateText" value="" />
+                                <p id="statelistBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="billingDistrictlist">District *</label>
+                                <select id="billingDistrictlist" class="districtlist form-select">
+                                    <option value="0">District</option>
+                                </select>
+                                <input type="hidden" id="selectedBillingDistrictText" name="selectedBillingDistrictText" value="" />
+                                <p id="districtlistBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="billingCitylist">City *</label>
+                                <select id="billingCitylist" class="citylist form-select">
+                                    <option value="0">City</option>
+                                </select>
+                                <input type="hidden" id="selectedBillingCityText" name="selectedBillingCityText" value="" />
+                                <p id="citylistBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Billing_Town">Local Town *</label>
+                                <input class="form-control" id="checkout_Billing_Town" name="checkout_Billing_Town" type="text" placeholder="Town">
+                                <p id="TownBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="checkout_Billing_PostCode">ZIP / Postcode *</label>
+                                <input class="form-control" id="checkout_Billing_PostCode" name="checkout_Billing_PostCode" type="text" placeholder="ZIP / Postcode">
+                                <p id="PostCodeBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="checkout_Billing_OrderNote">Order Note *</label>
+                                <input class="form-control" id="checkout_Billing_OrderNote" name="checkout_Billing_OrderNote" type="text" placeholder="Order Note">
+                                <p id="OrderNoteBillingReqLbl" class="my-1" style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));display:none;"></p>
+                            </div>
+                            <div class="col-12">
+                                <!-- Button -->
+                                <button id="checkout-billing-continue" class="btn btn-mode btn-sm rounded-1" type="button"> Continue </button>
+                            </div>
+                        </div>
+
+                        <!-- Heading -->
+                    </div>
+                    <div class="col-md-5 col-lg-4 offset-lg-1 sticky-lg-top sticky-lg-top-header">
+                        <ul class="list-group mb-6" id="CheckoutContainer">
+                        </ul>
+
+                        <div class="card bg-gray-100">
+                            <div class="card-body py-0 px-4">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex bg-transparent px-0 py-3">
+                                        <span>Subtotal</span>
+                                        <span id="checkoutSubtotal" class="ms-auto">
+                                            <i class="fa-solid fa-indian-rupee-sign"></i>00.00
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item d-flex bg-transparent px-0 py-3">
+                                        <span>Shipping</span>
+                                        <span id="checkoutShippingAmt" class="ms-auto">
+                                            <i class="fa-solid fa-indian-rupee-sign"></i>00.00
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item d-flex bg-transparent px-0 py-3 fs-lg fw-600">
+                                        <span>Total</span>
+                                        <span id="checkoutGrandTotal" class="ms-auto">
+                                            <i class="fa-solid fa-indian-rupee-sign"></i>00.00
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bfmkpymnt pt-4">
+                            <button id="makePayment" type="submit" class="btn btn-primary w-100">Make Payment</button>
+                            <p class="m-0 pt-3">
+                                By placing your order you agree to our <a href="@Url.RouteUrl("terms")">
+                                    Terms &amp;
+                                    Conditions
+                                </a>, <a href="@Url.RouteUrl("returns")">privacy and returns</a> policies. You also consent
+                                to some of your data being stored by ShopApp, which may be used to make future
+                                shopping experiences better for you.
+                            </p>
+                        </div>
+                    </div>
+                }
+        </div>
+    </section>
+    <!-- End Section -->
+</main>
+
+
+
+

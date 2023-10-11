@@ -1,0 +1,780 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- metas -->
+    @{
+        var title = ViewBag.Title as string;
+        if (!string.IsNullOrEmpty(title))
+        {
+            var textInfo = System.Globalization.CultureInfo.CurrentCulture.TextInfo;
+            title = textInfo.ToTitleCase(title);
+        }
+    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@title | Deepti Arts | Pencil Sketches and Arts</title>
+    <meta name="description" content="Deepti Arts offers a collection of pencil sketches and drawings created by Ms. Deepti Heda, an artist based in Mumbai, Maharashtra. Explore her beautiful artwork.">
+    <meta name="keywords" content="Deepti Arts, pencil sketches, drawings, artist, Mumbai, Maharashtra, Bhilwara, Rajasthan">
+    <meta name="author" content="Ms. Deepti Heda">
+
+    <!-- Define canonical URL for SEO -->
+    <link rel="canonical" href="http://deeptiarts.databoltahai.in/">
+    <link rel="shortcut icon" href="~/Content/assets/img/favicon.ico">
+
+    <!-- Add Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Deepti Arts - Pencil Sketches and Drawings">
+    <meta property="og:description" content="Deepti Arts offers a collection of pencil sketches and drawings created by Ms. Deepti Heda, an artist based in Mumbai, Maharashtra. Explore her beautiful artwork.">
+    <meta property="og:image" content="http://deeptiarts.databoltahai.in/images/cover.jpg">
+    <meta property="og:url" content="http://deeptiarts.databoltahai.in/">
+    <meta property="og:type" content="website">
+
+    <!-- CSS Template -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" />
+
+    <!-- JQuery / Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!--Google Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Montserrat&family=Proza+Libre&display=swap" rel="stylesheet">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@@context": "http://schema.org",
+            "@@type": "CreativeWork",
+            "name": "Pencil Sketch: Sunset",
+            "author": {
+                "@@type": "Person",
+                "name": "Ms. Deepti Heda"
+            },
+            "dateCreated": "2023-09-22",
+            "description": "A beautiful pencil sketch of a sunset over the ocean."
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Skippy -->
+    <a id="skippy" class="skippy visually-hidden-focusable overflow-hidden" href="#content">
+        <div class="container">
+            <span class="u-skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- End skippy -->
+    <!-- Preload -->
+    <div id="loading" class="loading-preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">loading...</span>
+        </div>
+    </div>
+    <!-- End Preload -->
+    <!-- Ask About Product Form -->
+    <div class="modal-askform-view modal fade" id="px_ask_modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ask about product</h4>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm("AskAboutProduct", "user", FormMethod.Post, new { @enctype = "multipart/form-data", id = "AskAboutProductForm" }))
+                    {
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="uname">Your Name</label>
+                                    <input type="text" class="form-control" placeholder="Name" name="uname" id="uname">
+                                    <p id="unameReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="uemail">Email address</label>
+                                    <input type="email" class="form-control" placeholder="E-mail" name="uemail" id="uemail">
+                                    <p id="uemailReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="usub">Subject</label>
+                                    <input type="text" class="form-control" placeholder="Subject" name="usub" id="usub">
+                                    <p id="usubReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="umsg">Your Message</label>
+                                    <textarea class="form-control" rows="5" placeholder="Your Message" name="umsg" id="umsg"></textarea>
+                                    <p id="umsgReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <p id="AskAboutProductFormReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Ask Abou tProduct Form -->
+    <!-- Header Search -->
+    <div class="px-search-full collapse bg-body p-3 position-fixed w-100 top-0" id="search-open">
+        <div class="container position-relative">
+            <div class="row vh-100 justify-content-center">
+                <div class="col-lg-8 pt-12">
+                    <h2 class="h1 mb-4">
+                        <span class="d-block">Search</span>
+                    </h2>
+                    <form action="" method="get" enctype="multipart/form-data" id="search-query-form">
+                        <div class="mb-3 input-group">
+                            <!-- Search input -->
+                            <input class="form-control shadow position-relative" type="text" id="searchInput" placeholder="What are you looking for?" required>
+                            <ul id="search-autocomplete" class="p-0 rounded-1 bg-50 search-autocomplete" style="display:none">
+                                <li class="search-autocomplete-li list-unstyled pb-2" role="presentation">
+                                    <a class="search-autocomplete-item nav-link"></a>
+                                </li>
+                            </ul>
+                            <!-- Search button -->
+                            <button type="submit" class="btn btn-primary shadow-none">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-- Search button close START -->
+                <a class="search-close" data-bs-toggle="collapse" href="javascript:void(0)" data-bs-target="#search-open" aria-expanded="true">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <!-- Search button close END -->
+            </div>
+            <!-- Autocomplete dropdown -->
+
+
+        </div>
+    </div>
+    <!-- End Header Search -->
+    <!-- Login Popup  -->
+    <div class="modal fade" id="topbarlogin">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <div class="modal-title p-3">
+                        <h5 class="m-0 text-white">Sign in to your account!</h5>
+                        <p class="m-0 text-white">Nice to see you! Please log in with your account.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="w-100 p-3">
+                        <!-- Form START -->
+                        @using (Html.BeginForm("login", "login", FormMethod.Post, new { id = "HomeModellogin" }))
+                        {
+                            <div class="mb-3">
+                                <label for="EmailHomeModel" class="form-label"> Email<span class="text-danger">*</span></label>
+                                <input type="email" id="EmailHomeModel" name="EmailHomeModel" class="form-control" placeholder="Enter Email">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="PasswordHomeModel">Password<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="PasswordHomeModel" name="PasswordHomeModel" placeholder="*********">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">keep me signed in</label>
+                            </div>
+                            <p id="loginAlertMsg" class="d-none response-msg-lbl"></p>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-dark">Login</button>
+                                </div>
+                                <div class="col-sm-8 text-sm-end">
+                                    <span class="text-muted">
+                                        Don't have an account? <a href="@Url.Action("signup", "signup")">Signup here</a>
+                                    </span><br />
+                                    <span class="text-muted">
+                                        Forgot password? <a href="@Url.Action("ForgotPassword", "login")">Reset here</a>
+                                    </span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Login Popup  -->
+    <!-- Mini Cart  -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="modalMiniCart" aria-labelledby="modalMiniCartLabel">
+        <div class="offcanvas-header border-bottom">
+
+            <h6 class="offcanvas-title your-cart-total-items" id="modalMiniCartLabel"></h6>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled m-0 p-0 miniCartContainer" id="miniCartContainer">
+            </ul>
+        </div>
+        <div class="offcanvas-footer border-top p-3">
+            <div class="row g-0 pt-2 mt-2 fw-bold text-mode">
+                <div class="col-8"><span class="text-mode">Subtotal</span></div>
+                <div class="col-4 text-end"><span id="minicartProductTotal" class="minicartProductTotal ml-auto"></span></div>
+            </div>
+            <div class="pt-4">
+                <button class="btn btn-block continue-to-checkout-btn btn-mode w-100 mb-3"><i class="fa-solid fa-credit-card me-2"></i> Continue to Checkout</button>
+                <button class="btn btn-block continue-to-view-cart-btn btn-outline-mode w-100"><i class="fa-solid fa-shopping-basket me-2"></i> View Cart</button>
+            </div>
+        </div>
+    </div>
+    <!-- End Mini Cart  -->
+    <!-- Sipping Popup  -->
+    <div class="modal-shipping-view modal fade" id="px_shipping_modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Shipping Information</h4>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="shipping-information" class="mb-4">
+                        <h6>Shipping Methods</h6>
+                        <p>We offer the following shipping methods:</p>
+                        <ul class="mb-3">
+                            <li>Standard Shipping: Estimated delivery in 5-7 business days.</li>
+                            <li>Expedited Shipping: Estimated delivery in 2-3 business days.</li>
+                            <li>International Shipping: Please contact us for international shipping options.</li>
+                        </ul>
+
+                        <h6>Shipping Costs</h6>
+                        <p>Shipping costs are calculated based on your order's total value. Orders above Rs 5,000 qualify for free standard shipping.</p>
+
+                        <h6>Shipping Locations</h6>
+                        <p>We offer shipping services to locations across India. For international shipping inquiries, please reach out to us.</p>
+
+                        <h6>Order Processing Time</h6>
+                        <p>Please allow 1-2 business days for order processing before shipment.</p>
+
+                        <h6>Tracking Orders</h6>
+                        <p>Once your order is shipped, you will receive a tracking number via email to monitor your shipment's progress.</p>
+
+                        <h6>Shipping Providers</h6>
+                        <p>We work with reputable carriers such as USPS, FedEx, and UPS to ensure reliable delivery.</p>
+
+                        <h6>Shipping Restrictions</h6>
+                        <p>Some items may have shipping restrictions due to fragility or other considerations. We do not ship certain items internationally.</p>
+
+                        <h6>Shipping Notifications</h6>
+                        <p>We'll keep you informed about your order's status with email notifications, including shipping confirmations.</p>
+
+                        <h6>Shipping Policies for Returns</h6>
+                        <p>For information on returns, exchanges, and refunds, please review our <a href="/returns">Returns Policy</a>.</p>
+
+                        <h6>Lost or Damaged Shipments</h6>
+                        <p>If your shipment is lost or arrives damaged, please <a href="/contact">contact us</a> immediately, and we will assist you in resolving the issue.</p>
+                    </div>
+                </div>
+                <div class="modal-header border-top">
+                    <h4 class="modal-title">Privacy Policy</h4>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="privacy-policy" class="mb-4">
+                        <h4 class="modal-title"></h4>
+
+                        <h6>Information Collection</h6>
+                        <p>We collect personal information, including name, email, and shipping address, during the order placement process for order fulfillment and customer support purposes.</p>
+
+                        <h6>Use of Information</h6>
+                        <p>We use your personal information to process orders, provide customer support, and send relevant marketing communications. We do not sell or share your data with third parties for their marketing purposes.</p>
+
+                        <h6>Data Security</h6>
+                        <p>We employ robust security measures to protect your personal information from unauthorized access or breaches.</p>
+
+                        <h6>Cookies and Tracking</h6>
+                        <p>We use cookies and tracking technologies for website analytics and personalization. You can manage cookie preferences in your browser settings.</p>
+
+                        <h6>Third-Party Sharing</h6>
+                        <p>We share limited customer data with third-party service providers, such as payment processors and shipping carriers, for order processing and delivery. They are obligated to protect your data.</p>
+
+                        <h6>Customer Rights</h6>
+                        <p>You have the right to access, correct, or delete your personal information. For inquiries or requests related to your data, please <a href="/contact">contact us</a>.</p>
+
+                        <h6>Opt-Out Options</h6>
+                        <p>You can opt out of marketing communications at any time by adjusting your communication preferences in your account settings or using the unsubscribe link in our emails.</p>
+
+                        <h6>Data Retention</h6>
+                        <p>We retain your personal data for as long as necessary for order fulfillment and legal compliance.</p>
+
+                        <h6>Legal Compliance</h6>
+                        <p>This privacy policy complies with applicable data protection laws and regulations.</p>
+
+                        <h6>Contact Information</h6>
+                        <p>If you have questions or concerns about your privacy or this policy, please reach out to us at <a href="/contact">contact@yourwebsite.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sipping Popup  -->
+    <!-- Size Chart  -->
+    <div class="modal-size-chart modal fade" id="px_size_chart_modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Size Chart</h4>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr class="text-mode">
+                                <th>Size in Inches</th>
+                                <th>Size in Centimeters (cm)</th>
+                                <th>Size in Millimeters (mm)</th>
+                                <th>Size in Pixels (at 96 DPI)</th>
+                                <th>Size in Points (pt)</th>
+                                <th>Size in Picas (pc)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int inch = 5; inch <= 16; inch++)
+                            {
+                                double cm = inch * 2.54;
+                                double mm = cm * 10;
+                                double pixels = inch * 96; // Assuming 96 DPI
+                                double points = inch * 72;
+                                double picas = inch * 6;
+
+                                <tr>
+                                    <td>@(inch).00"</td>
+                                    <td>@cm.ToString("0.00") cm</td>
+                                    <td>@mm.ToString("0.00") mm</td>
+                                    <td>@pixels.ToString("0.00") px</td>
+                                    <td>@points.ToString("0.00") pt</td>
+                                    <td>@picas.ToString("0.00") pc</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Size Chart  -->
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- heder height -->
+        <div class="header-height-bar"></div>
+        <!-- Header -->
+        <header class="header-main bg-mode-re header-light fixed-top header-height header-option-1">
+            <!-- Header Top -->
+            <div class="header-top small bg-black small">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Left -->
+                        <div class="d-flex align-items-center justify-content-center d-none d-lg-block">
+                            <ul class="nav white-link">
+                                <li class="nav-item me-3 text-white text-opacity-85">
+                                    <span>
+                                        <i class="fa-regular fa-clock me-2"></i> Visit time:
+                                        Mon-Sat 10:00-19:00
+                                    </span>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="navbar-link">
+                                        <i class="fa-solid fa-headset me-2"></i> Call us now: @ViewBag.AboutDetails.cMobile1
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Right -->
+                        <div class="d-flex align-items-center justify-content-center w-100 w-lg-auto">
+                            <div class="dropdown ms-0 ms-lg-3 d-block d-lg-none">
+                                <a href="tel:91+@ViewBag.AboutDetails.cMobile1" class="text-white">
+                                    <i class="fa-solid fa-phone me-2"></i> Call: @ViewBag.AboutDetails.cMobile1
+                                </a>
+                            </div>
+
+                            <!-- Top link -->
+                            <ul class="nav ms-auto ms-lg-3">
+                                <li class="nav-item h-switch dropdown">
+                                    <button class="theme-switch nav-link text-white"
+                                            id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown"
+                                            data-bs-display="static">
+                                        <span class="bi my-1 theme-icon-active">
+                                            <i class="fa-solid fa-circle-half-stroke"></i>
+                                        </span><span class="d-none">Toggle theme</span>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+                                        <li>
+                                            <button type="button" class="dropdown-item" data-bs-theme-value="light">
+                                                <span class="bi me-2 opacity-50 theme-icon"><i class="fa-solid fa-sun"></i> </span>Light <span class="bi ms-auto d-none"><i class="bi-check2"></i></span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item" data-bs-theme-value="dark">
+                                                <span class="bi me-2 opacity-50 theme-icon"><i class="fa-solid fa-moon"></i> </span>Dark <span class="bi ms-auto d-none"><i class="bi-check2"></i></span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="dropdown-item active" data-bs-theme-value="auto">
+                                                <span class="bi me-2 opacity-50 theme-icon"><i class="fa-solid fa-circle-half-stroke"></i> </span>Auto <span class="bi ms-auto d-none"><i class="bi-check2"></i></span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </li>
+                                @if (Session["userid"] != null)
+                                {
+                                    <li class="nav-item">
+                                        <a href="~/user/logout" class="nav-link text-white"><i class="fa-solid fa-sign-out" me-2"></i> Logout</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link text-white" data-bs-toggle="modal"
+                                           data-bs-target="#topbarlogin"><i class="fa-regular fa-user" me-2"></i> Login</a>
+                                    </li>
+                                }
+
+                            </ul>
+                            <!-- Top social -->
+                            <div class="nav header-social justify-content-end d-none d-lg-block white-link">
+                                <a class="h-social-link" href="#">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a class="h-social-link" href="#">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a class="h-social-link" href="#">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Top -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <!-- Logo -->
+                    <a class="navbar-brand w-37 w-sm-40 w-md-21" href="~/">
+                        <img class="logo-light img-fluid" src="~/Content/assets/projectImages/About/logo-dark.png" title="@ViewBag.AboutDetails.cLogo" alt="">
+                        <img class="logo-dark img-fluid" src="~/Content/assets/projectImages/About/@ViewBag.AboutDetails.cLogo" title="@ViewBag.AboutDetails.cLogo" alt="">
+                    </a>
+                    <!-- Logo -->
+                    <!-- Menu -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a href="~/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="@Url.RouteUrl("about")" class="nav-link">About</a>
+                            </li>
+
+                            <li class="dropdown dropdown-full nav-item">
+                                <a href="@Url.RouteUrl("collections")" class="nav-link">
+                                    Collections
+                                    <i class="d-none d-md-inline fa-solid fa-chevron-down"></i>
+                                </a>
+                                <label class="px-dropdown-toggle mob-menu"></label>
+                                <div class="dropdown-menu dropdown-mega-menu py-0">
+                                    <div class="container-fluid p-3 p-lg-4">
+                                        <div class="row gy-4">
+                                            @foreach (var item in ViewBag.MainCategoryTbls)
+                                            {
+                                                <div class="col-4 col-md-3 col-lg-2">
+                                                    <div class="hover-scale position-relative mb-3">
+                                                        <div class="hover-scale-in">
+                                                            <a href="@Url.RouteUrl("catcollections", new { catname = Url.Encode(item.CategoryName.Replace(" ", "-").ToLower()) })">
+                                                                <img class="img-fluid" src="~/Content/assets/projectImages/Category/@item.CategoryImage" title="@item.CategoryName" alt="@item.CategoryName">
+                                                            </a>
+                                                        </div>
+                                                        <div class="pt-2 text-center position-absolute bottom-0 start-0 mb-3">
+                                                            <h5 class="m-0 h6 bg-body px-3 py-2">
+                                                                <a class="text-reset link-effect" href="@Url.RouteUrl("catcollections", new { catname = Url.Encode(item.CategoryName.Replace(" ", "-").ToLower()) })">
+                                                                    @item.CategoryName
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="list-unstyled link-list-style-02 link-list-style-03">
+                                                        @foreach (var sub in ViewBag.SubCategoryTbls)
+                                                        {
+                                                            if (sub.CatName == item.CategoryName)
+                                                            {
+                                                                <li><a href="@Url.RouteUrl("subcatcollections", new { catname = Url.Encode(sub.CatName.Replace(" ", "-").ToLower()), subcatname = Url.Encode(sub.SubCategoryName.Replace(" ", "-").ToLower()) })"> @sub.SubCategoryName </a></li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="~/testimonials" class="nav-link">Testimonials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="~/gallery" class="nav-link">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="~/contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Menu -->
+                    <div class="nav flex-nowrap align-items-center header-right">
+                        <!-- Nav Search-->
+                        <div class="nav-item">
+                            <a class="nav-link collapsed" data-bs-toggle="collapse" href="javascript:void(0)"
+                               data-bs-target="#search-open" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+                        <!-- Acount -->
+                        <div class="nav-item dropdown">
+                            <a class="nav-link" href="#" role="button" id="dropdown_myaccount" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="login-hi-lbl" @((Session["userid"] != null) ? "data-login-hi=Hi" : "")>
+                                    <i class="fa-regular fa-user text-dark-emphasis"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end mt-2 shadow" aria-labelledby="dropdown_myaccount">
+                                @if (Session["userid"] == null)
+                                {
+                                    <a id="go-to-login-btnlink" class="dropdown-item" href="@Url.Action("login", "login")">Login</a>
+                                    <a id="go-to-signup-btnlink" class="dropdown-item" href="@Url.Action("signup", "signup")">Register</a>
+                                }
+                                else
+                                {
+                                    <a class="dropdown-item" href="@Url.Action("accountprofile", "user")">Hi @Session["userusername"]</a>
+                                    <a class="dropdown-item" href="@Url.Action("accountprofile", "user")">My account</a>
+                                }
+                            </div>
+                        </div>
+                        <!-- Wishlist -->
+                        <div class="nav-item">
+                            <a class="nav-link go-to-wishlist-btn position-relative" href="@((Session["userid"] != null) ? Url.Action("index","wishlist") : @Url.Action("login", "login"))">
+                                <span id="wishlist-count" class="" data-wishlist-count="0">
+                                    <i class="fa-regular fa-heart"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <!-- Cart -->
+                        <div class="nav-item">
+                            <a class="nav-link" data-bs-toggle="offcanvas" href="#modalMiniCart" role="button" aria-controls="modalMiniCart">
+                                <span id="cart_item_count" class="" data-cart-items="0">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <!-- Mobile Toggle -->
+                        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="px-navbar-toggler-icon"></span>
+                        </button>
+                        <!-- End Mobile Toggle -->
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- End Header -->
+
+        @RenderBody()
+
+        <!-- Footer -->
+        <footer class="bg-dark footer footer-border-top light">
+            <div class="footer-top py-6">
+                <div class="container">
+                    <div class="row g-3 mb-5">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="d-flex bg-dark px-3 py-1 align-items-center border border-white-light">
+                                <div class="fs-1 text-white"><i class="fa-solid fa-truck"></i></div>
+                                <div class="col ps-3">
+                                    <h6 class="mb-1 text-white">Free shipping</h6>
+                                    <p class="m-0 text-white-50 small"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="d-flex bg-dark px-3 py-1 align-items-center border border-white-light">
+                                <div class="fs-1 text-white"><i class="fa-solid fa-headphones"></i></div>
+                                <div class="col ps-3">
+                                    <h6 class="mb-1 text-white">Contact us 24/7</h6>
+                                    <p class="m-0 text-white-50 small"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="d-flex bg-dark px-3 py-1 align-items-center border border-white-light">
+                                <div class="fs-1 text-white"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                                <div class="col ps-3">
+                                    <h6 class="mb-1 text-white">15 Days Return</h6>
+                                    <p class="m-0 text-white-50 small"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="d-flex bg-dark px-3 py-1 align-items-center border border-white-light">
+                                <div class="fs-1 text-white"><i class="fa-solid fa-shield-heart"></i></div>
+                                <div class="col ps-3">
+                                    <h6 class="mb-1 text-white">100% Secure Payment</h6>
+                                    <p class="m-0 text-white-50 small"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3 my-3">
+                            <h6 class="text-uppercase mb-5 text-white">Information</h6>
+                            <ul class="list-unstyled white-link footer-link-1 m-0">
+                                <li class="pb-2"><a href="~/about-us">About Us</a></li>
+                                <li class="pb-2"><a href="~/contact">Contact Us</a></li>
+                                <li class="pb-2"><a href="~/collections">Art Collections</a></li>
+                                <li class="pb-2"><a href="~/gallery">Gallery</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 my-3">
+                            <h6 class="text-uppercase mb-5 text-white">SUPPORT</h6>
+                            <ul class="list-unstyled white-link footer-link-1 m-0">
+                                @*<li class="pb-2"><a href="~/about/policies">Privacy Policy</a></li>*@
+                                <li class="pb-2"><a href="~/about/terms-of-use">Terms of use</a></li>
+                                <li class="pb-2"><a href="~/about/faqs">Faqs</a></li>
+                                <li class="pb-2"><a href="~/shipping-packaging">Shipping & Packaging</a></li>
+                                @*<li class="pb-2"><a href="~/return-policy">Returns & Cancellation Policy</a></li>*@
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 my-3">
+                            <h6 class="text-uppercase mb-5 text-white">Categories</h6>
+                            <ul class="list-unstyled white-link footer-link-1 m-0">
+                                @foreach (var item in ViewBag.MainCategoryTbls)
+                                {
+                                    <li class="pb-2"><a href="@Url.RouteUrl("catcollections", new { catname = Url.Encode(item.CategoryName.Replace(" ", "-").ToLower()) })">@item.CategoryName</a></li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 my-3">
+                            <h6 class="text-uppercase mb-5 text-white">Contact Us</h6>
+                            <p class="text-white text-opacity-85">
+                                <i class="fa-solid fa-location-dot"></i>@ViewBag.AboutDetails.cAddress
+                            </p>
+                            <p class="text-white text-opacity-85">
+                                <i class="fa-solid fa-phone"></i>
+                                <a class="text-white text-opacity-85" href="tel:+91+@ViewBag.AboutDetails.cMobile1">Call us: +91 @ViewBag.AboutDetails.cMobile1</a>
+                            </p>
+                            <p class="text-white text-opacity-85 d-none d-md-block">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <a class="text-white text-opacity-85" target="_blank"
+                                   href="https://web.whatsapp.com/send?text=Hi&phone=@ViewBag.AboutDetails.cMobile1">WhatsApp: +91 @ViewBag.AboutDetails.cMobile1</a>
+                            </p>
+                            <p class="text-white text-opacity-85 d-md-none">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <a class="text-white text-opacity-85" target="_blank"
+                                   href="https://wa.me/91+@ViewBag.AboutDetails.cMobile1?text=Hi!">WhatsApp: +91 @ViewBag.AboutDetails.cMobile1</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom py-3 footer-border-top light small">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start py-1">
+                            <p class="m-0 text-white text-opacity-85">
+                                © @DateTime.Now.Year copyright by <a href="http://deeptiarts.databoltahai.in/"
+                                                                     target="_blank" class="text-reset">deeptiarts</a>
+                            </p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end py-1">
+                            <img src="~/Content/assets/img/payments.png" title="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+        <!-- Not User Modal Start -->
+        <div class="not-user-modal">
+            <div class="not-user-content">
+                <div class="deeptiarts-logo mt-3">
+                    <img class="img-fluid w-50" src="~/Content/assets/projectImages/About/@ViewBag.AboutDetails.cLogo" alt="Deepti Logo">
+                </div>
+                <p class="non-login-content mt-3 fs-16 fw-500">Please LogIn / Signup to use all the Wishlist features</p>
+                <div class="modal-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="modal-btn non-login-btn mt-3">
+                    <button class="goto-login-btn btn btn-primary fw-600 rounded-2 btn-sm w-50">LogIn</button>
+                    <button class="goto-signup-btn btn btn-outline-primary fw-500 ms-3 rounded-2 btn-sm w-50">SignUp</button>
+                </div>
+            </div>
+        </div>
+        <!-- Not User Modal End -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- Display alert / response message / comman -->
+    <p id="display-alert" class="d-none response-msg-lbl"></p>
+
+    <!-- Whatsapp Sticky Mobile -->
+    <div class="whatsapp-sticky d-md-none">
+        <a target="_blank" href="https://wa.me/91+@ViewBag.AboutDetails.cMobile1?text=Hi!" class="">
+            <svg height="45" viewBox="-1 0 512 512" width="45" xmlns="http://www.w3.org/2000/svg"><path d="m10.894531 512c-2.875 0-5.671875-1.136719-7.746093-3.234375-2.734376-2.765625-3.789063-6.78125-2.761719-10.535156l33.285156-121.546875c-20.722656-37.472656-31.648437-79.863282-31.632813-122.894532.058594-139.941406 113.941407-253.789062 253.871094-253.789062 67.871094.0273438 131.644532 26.464844 179.578125 74.433594 47.925781 47.972656 74.308594 111.742187 74.289063 179.558594-.0625 139.945312-113.945313 253.800781-253.867188 253.800781 0 0-.105468 0-.109375 0-40.871093-.015625-81.390625-9.976563-117.46875-28.84375l-124.675781 32.695312c-.914062.238281-1.84375.355469-2.761719.355469zm0 0" fill="#e5e5e5"></path><path d="m10.894531 501.105469 34.46875-125.871094c-21.261719-36.839844-32.445312-78.628906-32.429687-121.441406.054687-133.933594 109.046875-242.898438 242.976562-242.898438 64.992188.027344 125.996094 25.324219 171.871094 71.238281 45.871094 45.914063 71.125 106.945313 71.101562 171.855469-.058593 133.929688-109.066406 242.910157-242.972656 242.910157-.007812 0 .003906 0 0 0h-.105468c-40.664063-.015626-80.617188-10.214844-116.105469-29.570313zm134.769531-77.75 7.378907 4.371093c31 18.398438 66.542969 28.128907 102.789062 28.148438h.078125c111.304688 0 201.898438-90.578125 201.945313-201.902344.019531-53.949218-20.964844-104.679687-59.09375-142.839844-38.132813-38.160156-88.832031-59.1875-142.777344-59.210937-111.394531 0-201.984375 90.566406-202.027344 201.886719-.015625 38.148437 10.65625 75.296875 30.875 107.445312l4.804688 7.640625-20.40625 74.5zm0 0" fill="#fff"></path><path d="m19.34375 492.625 33.277344-121.519531c-20.53125-35.5625-31.324219-75.910157-31.3125-117.234375.050781-129.296875 105.273437-234.488282 234.558594-234.488282 62.75.027344 121.644531 24.449219 165.921874 68.773438 44.289063 44.324219 68.664063 103.242188 68.640626 165.898438-.054688 129.300781-105.28125 234.503906-234.550782 234.503906-.011718 0 .003906 0 0 0h-.105468c-39.253907-.015625-77.828126-9.867188-112.085938-28.539063zm0 0" fill="#64b161"></path><g fill="#fff"><path d="m10.894531 501.105469 34.46875-125.871094c-21.261719-36.839844-32.445312-78.628906-32.429687-121.441406.054687-133.933594 109.046875-242.898438 242.976562-242.898438 64.992188.027344 125.996094 25.324219 171.871094 71.238281 45.871094 45.914063 71.125 106.945313 71.101562 171.855469-.058593 133.929688-109.066406 242.910157-242.972656 242.910157-.007812 0 .003906 0 0 0h-.105468c-40.664063-.015626-80.617188-10.214844-116.105469-29.570313zm134.769531-77.75 7.378907 4.371093c31 18.398438 66.542969 28.128907 102.789062 28.148438h.078125c111.304688 0 201.898438-90.578125 201.945313-201.902344.019531-53.949218-20.964844-104.679687-59.09375-142.839844-38.132813-38.160156-88.832031-59.1875-142.777344-59.210937-111.394531 0-201.984375 90.566406-202.027344 201.886719-.015625 38.148437 10.65625 75.296875 30.875 107.445312l4.804688 7.640625-20.40625 74.5zm0 0"></path><path d="m195.183594 152.246094c-4.546875-10.109375-9.335938-10.3125-13.664063-10.488282-3.539062-.152343-7.589843-.144531-11.632812-.144531-4.046875 0-10.625 1.523438-16.1875 7.597657-5.566407 6.074218-21.253907 20.761718-21.253907 50.632812 0 29.875 21.757813 58.738281 24.792969 62.792969 3.035157 4.050781 42 67.308593 103.707031 91.644531 51.285157 20.226562 61.71875 16.203125 72.851563 15.191406 11.132813-1.011718 35.917969-14.6875 40.976563-28.863281 5.0625-14.175781 5.0625-26.324219 3.542968-28.867187-1.519531-2.527344-5.566406-4.046876-11.636718-7.082032-6.070313-3.035156-35.917969-17.726562-41.484376-19.75-5.566406-2.027344-9.613281-3.035156-13.660156 3.042969-4.050781 6.070313-15.675781 19.742187-19.21875 23.789063-3.542968 4.058593-7.085937 4.566406-13.15625 1.527343-6.070312-3.042969-25.625-9.449219-48.820312-30.132812-18.046875-16.089844-30.234375-35.964844-33.777344-42.042969-3.539062-6.070312-.058594-9.070312 2.667969-12.386719 4.910156-5.972656 13.148437-16.710937 15.171875-20.757812 2.023437-4.054688 1.011718-7.597657-.503906-10.636719-1.519532-3.035156-13.320313-33.058594-18.714844-45.066406zm0 0" fill-rule="evenodd"></path></g></svg>
+        </a>
+    </div>
+
+    <!-- Whatsapp Sticky Desktop -->
+    <div class="whatsapp-sticky d-none d-md-block">
+        <a target="_blank" href="https://web.whatsapp.com/send?text=Hi&amp;phone=@ViewBag.AboutDetails.cMobile1" class="">
+            <svg height="45" viewBox="-1 0 512 512" width="45" xmlns="http://www.w3.org/2000/svg"><path d="m10.894531 512c-2.875 0-5.671875-1.136719-7.746093-3.234375-2.734376-2.765625-3.789063-6.78125-2.761719-10.535156l33.285156-121.546875c-20.722656-37.472656-31.648437-79.863282-31.632813-122.894532.058594-139.941406 113.941407-253.789062 253.871094-253.789062 67.871094.0273438 131.644532 26.464844 179.578125 74.433594 47.925781 47.972656 74.308594 111.742187 74.289063 179.558594-.0625 139.945312-113.945313 253.800781-253.867188 253.800781 0 0-.105468 0-.109375 0-40.871093-.015625-81.390625-9.976563-117.46875-28.84375l-124.675781 32.695312c-.914062.238281-1.84375.355469-2.761719.355469zm0 0" fill="#e5e5e5"></path><path d="m10.894531 501.105469 34.46875-125.871094c-21.261719-36.839844-32.445312-78.628906-32.429687-121.441406.054687-133.933594 109.046875-242.898438 242.976562-242.898438 64.992188.027344 125.996094 25.324219 171.871094 71.238281 45.871094 45.914063 71.125 106.945313 71.101562 171.855469-.058593 133.929688-109.066406 242.910157-242.972656 242.910157-.007812 0 .003906 0 0 0h-.105468c-40.664063-.015626-80.617188-10.214844-116.105469-29.570313zm134.769531-77.75 7.378907 4.371093c31 18.398438 66.542969 28.128907 102.789062 28.148438h.078125c111.304688 0 201.898438-90.578125 201.945313-201.902344.019531-53.949218-20.964844-104.679687-59.09375-142.839844-38.132813-38.160156-88.832031-59.1875-142.777344-59.210937-111.394531 0-201.984375 90.566406-202.027344 201.886719-.015625 38.148437 10.65625 75.296875 30.875 107.445312l4.804688 7.640625-20.40625 74.5zm0 0" fill="#fff"></path><path d="m19.34375 492.625 33.277344-121.519531c-20.53125-35.5625-31.324219-75.910157-31.3125-117.234375.050781-129.296875 105.273437-234.488282 234.558594-234.488282 62.75.027344 121.644531 24.449219 165.921874 68.773438 44.289063 44.324219 68.664063 103.242188 68.640626 165.898438-.054688 129.300781-105.28125 234.503906-234.550782 234.503906-.011718 0 .003906 0 0 0h-.105468c-39.253907-.015625-77.828126-9.867188-112.085938-28.539063zm0 0" fill="#64b161"></path><g fill="#fff"><path d="m10.894531 501.105469 34.46875-125.871094c-21.261719-36.839844-32.445312-78.628906-32.429687-121.441406.054687-133.933594 109.046875-242.898438 242.976562-242.898438 64.992188.027344 125.996094 25.324219 171.871094 71.238281 45.871094 45.914063 71.125 106.945313 71.101562 171.855469-.058593 133.929688-109.066406 242.910157-242.972656 242.910157-.007812 0 .003906 0 0 0h-.105468c-40.664063-.015626-80.617188-10.214844-116.105469-29.570313zm134.769531-77.75 7.378907 4.371093c31 18.398438 66.542969 28.128907 102.789062 28.148438h.078125c111.304688 0 201.898438-90.578125 201.945313-201.902344.019531-53.949218-20.964844-104.679687-59.09375-142.839844-38.132813-38.160156-88.832031-59.1875-142.777344-59.210937-111.394531 0-201.984375 90.566406-202.027344 201.886719-.015625 38.148437 10.65625 75.296875 30.875 107.445312l4.804688 7.640625-20.40625 74.5zm0 0"></path><path d="m195.183594 152.246094c-4.546875-10.109375-9.335938-10.3125-13.664063-10.488282-3.539062-.152343-7.589843-.144531-11.632812-.144531-4.046875 0-10.625 1.523438-16.1875 7.597657-5.566407 6.074218-21.253907 20.761718-21.253907 50.632812 0 29.875 21.757813 58.738281 24.792969 62.792969 3.035157 4.050781 42 67.308593 103.707031 91.644531 51.285157 20.226562 61.71875 16.203125 72.851563 15.191406 11.132813-1.011718 35.917969-14.6875 40.976563-28.863281 5.0625-14.175781 5.0625-26.324219 3.542968-28.867187-1.519531-2.527344-5.566406-4.046876-11.636718-7.082032-6.070313-3.035156-35.917969-17.726562-41.484376-19.75-5.566406-2.027344-9.613281-3.035156-13.660156 3.042969-4.050781 6.070313-15.675781 19.742187-19.21875 23.789063-3.542968 4.058593-7.085937 4.566406-13.15625 1.527343-6.070312-3.042969-25.625-9.449219-48.820312-30.132812-18.046875-16.089844-30.234375-35.964844-33.777344-42.042969-3.539062-6.070312-.058594-9.070312 2.667969-12.386719 4.910156-5.972656 13.148437-16.710937 15.171875-20.757812 2.023437-4.054688 1.011718-7.597657-.503906-10.636719-1.519532-3.035156-13.320313-33.058594-18.714844-45.066406zm0 0" fill-rule="evenodd"></path></g></svg>
+        </a>
+    </div>
+
+    <!--Script-->
+    <script>
+        $("#search-query-form").submit(function (e) {
+            e.preventDefault();
+            var query = $("#searchInput").val().toLowerCase();
+            var query_url = '/collections/artwork/' + query.replace(/ /g, '-');
+            window.location.href = query_url;
+        });
+
+        var userId = @(Session["userid"] ?? "null");
+        var loginUrl = "@Url.Action("login", "login")";
+        var userprofileUrl = "@Url.RouteUrl("accountprofile")";
+
+        $('.goto-login-btn').click(function () {
+            //$('.not-user-modal').fadeOut(300); // Close on login button click
+            window.location.href = '@Url.RouteUrl("login")';
+        });
+
+        $('.goto-signup-btn').click(function () {
+            //$('.not-user-modal').fadeOut(300); // Close on signup button click
+            window.location.href = '@Url.RouteUrl("signup")';
+        });
+    </script>
+
+    <script src="~/Content/assets/js/custom.js"></script>
+    <script src="~/Scripts/my-custom.js"></script>
+    <script src="~/Content/assets/vendor/magnific/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/assets/vendor/count-down/jquery.countdown.min.js"></script>
+    <script src="~/Content/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/Content/assets/vendor/jarallax/jarallax-all.js"></script>
+    <script src="~/Content/assets/js/theme.js"></script>
+    <script src="~/Content/assets/js/color-modes.js"></script>
+
+</body>
+</html>

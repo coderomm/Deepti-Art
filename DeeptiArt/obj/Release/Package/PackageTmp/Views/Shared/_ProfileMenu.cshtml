@@ -1,0 +1,47 @@
+﻿@model DeeptiArt.Models.RegisteredUsersTbl
+
+<div class="col-lg-4 pb-4 pb-lg-0 col-xxl-3 pe-xxl-5">
+    <div class="bg-body border border-bottom-0 shadow-lg">
+        <div class="d-flex p-3 align-items-center">
+            <div class="avatar avatar-lg rounded-circle">
+                <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="col ps-3">
+                <h6 class="m-0">@Model.UserName</h6>
+                <small><a href="#">@Model.Email</a></small>
+            </div>
+        </div>
+        <div class="bg-gray-200 p-3 border-bottom border-top">
+            <h6 class="m-0">Dashboard</h6>
+        </div>
+        <ul class="list-unstyled mb-0 theme-link">
+            <li class="border-bottom mb-0">
+                <a class="nav-link-style d-flex align-items-center p-3" href="@Url.RouteUrl("accountorders")">
+                    <i class="fa-solid fa-shopping-bag me-2"></i> Order
+                    <div id="myTotalOrdersCount" class="ms-auto badge-pill badge bg-secondary"></div>
+                </a>
+            </li>
+        </ul>
+        <div class="bg-gray-200 p-3 border-bottom">
+            <h6 class="m-0">Account settings</h6>
+        </div>
+        <ul class="list-unstyled mb-0 theme-link">
+            <li class="border-bottom mb-0">
+                <a class="nav-link-style d-flex align-items-center active p-3" href="@Url.RouteUrl("accountprofile")">
+                    <i class="fa-solid fa-user me-2"></i> Profile info
+                </a>
+            </li>
+
+            <li class="border-bottom mb-0">
+                <a class="nav-link-style d-flex align-items-center p-3" href="@Url.RouteUrl("changepassword")">
+                    <i class="fa-solid fa-key me-2"></i> Change Password
+                </a>
+            </li>
+            <li class="border-bottom mb-0">
+                <a class="nav-link-style d-flex align-items-center p-3" href="~/user/account/Logout">
+                    <i class="fa-solid fa-sign-out me-2"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,695 @@
+﻿@model DeeptiArt.Models.ProductTbl
+
+@{
+    ViewBag.Title = Model.Name;
+}
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    .ReviewRating {
+        border: none;
+        float: left;
+    }
+
+        .ReviewRating > input {
+            display: none;
+        }
+
+        .ReviewRating > label:before {
+            margin: 0px 2px;
+            font-size: 20px;
+        }
+
+
+        .ReviewRating > label {
+            color: #4b566b;
+            float: right;
+        }
+
+        .ReviewRating > input:checked ~ label, .ReviewRating:not(:checked) > label:hover, .ReviewRating:not(:checked) > label:hover ~ label {
+            /* show gold star when clicked */
+            /* hover current star */
+            color: #fea569;
+        }
+            /* hover previous stars in list */
+            .ReviewRating > input:checked + label:hover, .ReviewRating > input:checked ~ label:hover, .ReviewRating > label:hover ~ input:checked ~ label, .ReviewRating > input:checked ~ label:hover ~ label {
+                /* hover current star when changing rating */
+                /* lighten current selection */
+                color: #d2a3a9;
+                cursor: pointer;
+            }
+</style>
+<!-- Main -->
+<main>
+    @{
+        int totalreviews = 0;
+        int totalrating = 0;
+        double avgrating = 0;
+        double emptystarsoutoffive = 0;
+    }
+    @foreach (var Reviewitem in ViewBag.ReviewTables)
+    {
+        if (Model.Id == Reviewitem.productid)
+        {
+            totalreviews++;
+            totalrating += Convert.ToInt32(Reviewitem.rating);
+        }
+
+        avgrating = totalreviews > 0 ? (double)totalrating / totalreviews : 0;
+        avgrating = Math.Round(avgrating, 2); // Round to two decimal places
+        emptystarsoutoffive = 5 - avgrating;
+    }
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">@Model.Name</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb dark-link m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item"><a class="text-nowrap" href="~/"><i class="fa-solid fa-home"></i> Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-nowrap" href="~/collections">Collections</a></li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Artworks</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Product Details -->
+    <section class="product-details py-6">
+        <div class="container">
+            <div class="row">
+                <!-- Product Gallery -->
+                <div class="col-lg-6 lightbox-gallery product-gallery">
+                    <div class="swiper swiper_gallery">
+                        <div class="swiper-wrapper">
+                            @foreach (var item in ViewBag.FrameTbls)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="pd-gallery-slide">
+                                        <a class="gallery-link"
+                                           href="~/Content/assets/projectImages/Frame/@item.FrameImage"><i class="bi bi-arrows-fullscreen"></i></a>
+
+                                        <img src="~/Content/assets/projectImages/Frame/@item.FrameImage"
+                                             class="img-fluid position-relative" style="z-index:1;"
+                                             title="@Url.Encode(item.FrameName.Replace(" ", "-").ToLower())" alt="">
+
+                                        <img src="~/Content/assets/projectImages/Products/@Model.Image"
+                                             class="img-fluid" title="@Url.Encode(Model.Name.Replace(" ", "-").ToLower())" alt=""
+                                             style="position: absolute !important; top: 0; left: 15px; width: 75%; width: 400px; z-index: -1; border: 1px solid yellow;">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="swiper swiper_thumb_gallery product-thumb">
+                        <div class="swiper-wrapper">
+                            @foreach (var item in ViewBag.FrameTbls)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="pd-gallery-slide-thumb">
+                                        <img src="~/Content/assets/projectImages/Frame/@item.FrameImage" title="@Url.Encode(item.FrameName.Replace(" ", "-").ToLower())"
+                                             class="img-fluid product-frame-image"
+                                             data-frame-image="@item.Id">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="swiper-arrow-style-03 swiper-next swiper-next-pd-details_thumb">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="swiper-arrow-style-03 swiper-prev swiper-prev-pd-details_thumb">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Product Gallery -->
+                <!-- Product Details -->
+                <div class="col-lg-6 ps-lg-5">
+                    @using (Html.BeginForm("AddToCart", "cart", FormMethod.Post, new { @class = "AddToCartForm" }))
+                    {
+                        <input type="hidden" value="@Model.Id" name="ProductID" />
+
+                        <div class="product-detail pt-4 pt-lg-0">
+                            <div class="products-brand pb-2"><span>@Model.CatName, @Model.SubcatName</span></div>
+                            <div class="products-title mb-2">
+                                <h4 class="h4">@Model.Name</h4>
+                            </div>
+                            <div class="rating-star text small pb-4">
+
+                                <span>
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        if (i <= avgrating)
+                                        {
+                                            <i class="fa-solid fa-star active"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa-regular fa-star"></i>
+                                        }
+                                    }
+                                </span>
+
+                                <span>(@(totalreviews < 1 ? "0 review" : (totalreviews > 1 ? totalreviews + " reviews" : " review")))</span>
+                            </div>
+
+                            <div class="product-description">
+                                <p>@Model.Details</p>
+                            </div>
+                            <div class="product-attribute">
+                                <label class="fs-6 text-mode pb-2 fw-500">Frame Sizes ( in inches )</label>
+                                <div class="nav-thumbs nav mb-3">
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_6" value="6" checked="">
+                                        <label class="radio-text-label" for="inch_6">6</label>
+                                    </div>
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_7" value="7">
+                                        <label class="radio-text-label" for="inch_7">7</label>
+                                    </div>
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_8" value="8">
+                                        <label class="radio-text-label" for="inch_8">8</label>
+                                    </div>
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_9" value="9">
+                                        <label class="radio-text-label" for="inch_9">9</label>
+                                    </div>
+
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_10" value="10">
+                                        <label class="radio-text-label" for="inch_10">10</label>
+                                    </div>
+
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_11" value="11">
+                                        <label class="radio-text-label" for="inch_11">11</label>
+                                    </div>
+
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_12" value="12">
+                                        <label class="radio-text-label" for="inch_12">12</label>
+                                    </div>
+
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_13" value="13">
+                                        <label class="radio-text-label" for="inch_13">13</label>
+                                    </div>
+
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_14" value="14">
+                                        <label class="radio-text-label" for="inch_14">14</label>
+                                    </div>
+
+                                    <div class="form-check radio-text frame-size-radio-btn form-check-inline me-2">
+                                        <input class="form-check-input" type="radio" name="Size" id="inch_15" value="15">
+                                        <label class="radio-text-label" for="inch_15">15</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="count-down count-down-02 mb-3" data-countdown="October 10, 2023 15:00:00"></div>
+
+                            <div class="product-price fs-3 fw-500 mb-2">
+                                @{
+                                    int dummyprice = Convert.ToInt32(Model.Price) + 160;
+                                }
+
+                                <del class="text-muted fs-6"><i class="fa-solid fa-indian-rupee-sign"></i><small>@dummyprice.00</small></del>
+
+                                <span class="text-primary"><i class="fa-solid fa-indian-rupee-sign"></i>@Model.Price</span>
+                            </div>
+
+                            <div class="product-detail-actions d-flex flex-wrap pt-3">
+                                <div class="cart-qty me-3 mb-3">
+                                    <div class="dec qty-btn qty_btn">-</div>
+                                    <input class="product-cart-qty-input form-control" type="text" name="pQuantity" value="1">
+                                    <div class="inc qty-btn qty_btn">+</div>
+                                </div>
+                                <div class="cart-button mb-3 d-flex">
+                                    <button type="submit" class="btn btn-mode rounded-2 me-3"> <i class="fi-shopping-cart"></i> Add to cart </button>
+                                </div>
+                            </div>
+
+                            <div class="product-info-buttons nav pt-4">
+                                <a href="#" class="me-3" data-bs-toggle="modal"
+                                   data-bs-target="#px_size_chart_modal"><i class="fa-solid fa-scissors"></i>Size guide</a> <a href="#"
+                                                                                                                               class="" data-bs-toggle="modal" data-bs-target="#px_shipping_modal">
+                                    <i class="fa-solid fa-truck me-2"></i>Shipping
+                                </a>
+                                <a href="#" class="ms-auto" data-bs-toggle="modal"
+                                   data-bs-target="#px_ask_modal"><i class="fa-solid fa-envelope ms-auto"></i>Ask about product</a>
+                            </div>
+                            <div class="pt-3 border-top mt-3 small">
+                                <p class="theme-link mb-2">
+                                    <label class="m-0 text-mode">Categories:</label> <a href="@Url.RouteUrl("catcollections")">@Model.CatName</a>, <a href="@Url.RouteUrl("subcatcollections")">@Model.SubcatName</a>
+                                </p>
+                                <p class="theme-link mb-2">
+                                    <label class="m-0 text-mode">Tags:</label> <a href="#">Fashion</a>, <a href="#">Women</a>, <a href="#">Winter</a>
+                                </p>
+                                <p class="theme-link m-0">
+                                    <label class="m-0 text-mode">Share:</label> <a class="icon icon-secondary me-2" href="#"><i class="fa-brands fa-facebook"></i> </a><a class="icon icon-secondary me-2" href="#"><i class="fa-brands fa-twitter"></i> </a><a class="icon icon-secondary me-2" href="#"><i class="fa-brands fa-instagram"></i> </a><a class="icon icon-secondary me-2" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </p>
+                            </div>
+                            <div class="pt-4">
+                                @*<img class="img-fluid" src="~/Content/assets/img/fashion/payment-details.png" title=""
+                                     alt="">*@
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!-- End Product Details -->
+            </div>
+        </div>
+    </section>
+    <!-- End Product Details -->
+    <!-- Product Tabs -->
+    <section class="pb-6 py-md-6 pb-lg-10 pt-lg-5 bg-gray-100">
+        <div class="container">
+            <div class="product-tabs">
+                <ul class="nav product-nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a href="#" class="nav-link active" id="pd_description_tab"
+                           data-bs-toggle="tab" data-bs-target="#pd_description" role="tab" aria-controls="pd_description"
+                           aria-selected="true">Description</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#" class="nav-link" id="pd_information_tab"
+                           data-bs-toggle="tab" data-bs-target="#px_information" role="tab" aria-controls="px_information"
+                           aria-selected="false">Information</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#" class="nav-link" id="pd_reviews_tab"
+                           data-bs-toggle="tab" data-bs-target="#pd_reviews" role="tab" aria-controls="pd_reviews"
+                           aria-selected="false">Reviews</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="pd_description" role="tabpanel"
+                         aria-labelledby="pd_description_tab">
+                        <div class="row">
+                            <div class="col-lg-7 pe-lg-10">
+                                <h5>Details Description</h5>
+                                <blockquote class="bg-gray-100 p-3 lead fw-400 mt-5 text-mode border-start border-primary border-5">
+                                    @Model.Details
+                                </blockquote>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="pb-3">
+                                    <img src="~/Content/assets/projectImages/Products/@Model.Image" class="img-fluid" title="@Url.Encode(Model.Name.Replace(" ", "-").ToLower())" alt="@Url.Encode(Model.Name.Replace(" ", "-").ToLower())">
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex border p-3">
+                                            <div class="fs-1 text-primary"><i class="fa-solid fa-truck"></i></div>
+                                            <div class="col ps-3">
+                                                <h6 class="mb-1">Free shipping</h6>
+                                                <p class="m-0">Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex border p-3">
+                                            <div class="fs-1 text-primary"><i class="fa-solid fa-headphones"></i></div>
+                                            <div class="col ps-3">
+                                                <h6 class="mb-1">Contact us 24/7</h6>
+                                                <p class="m-0">Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex border p-3">
+                                            <div class="fs-1 text-primary"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                                            <div class="col ps-3">
+                                                <h6 class="mb-1">30 Days Return</h6>
+                                                <p class="m-0">Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex border p-3">
+                                            <div class="fs-1 text-primary"><i class="fa-solid fa-shield-heart"></i></div>
+                                            <div class="col ps-3">
+                                                <h6 class="mb-1">100% Secure Payment</h6>
+                                                <p class="m-0">Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="px_information" role="tabpanel" aria-labelledby="pd_information_tab">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <table class="table text-sm">
+                                    <tbody>
+                                        <tr>
+                                            <th class="fw-500 text-mode">Category : </th>
+                                            <td class="text-dark">@Model.CatName</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="fw-500 text-mode">Type : </th>
+                                            <td class="text-dark">@Model.SubcatName</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="fw-500 text-mode">Size : </th>
+                                            <td class="text-dark">05in x 15in</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="fw-500 text-mode">Created in : </th>
+                                            <td class="text-dark">
+                                                @Model.rts.ToString("MMMM yyyy")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="fw-500 text-mode">Sold by : </th>
+                                            <td class="text-dark">Artist</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-lg-6">
+                                <table class="table text-sm">
+                                    <tbody>
+
+                                        <tr>
+                                            <th class="fw-500 text-mode">Artwork : </th>
+                                            <td class="text-dark">Original</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="fw-500 text-mode">Quality : </th>
+                                            <td class="text-dark">Museum Quality - 100% Hand-Made</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="fw-500 text-mode">International shipping : </th>
+                                            <td class="text-dark">Yes</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="fw-500 text-mode">Domestic Ships Within : </th>
+                                            <td class="text-dark">7 - 10 business days</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="fw-500 text-mode">International Ships Within : </th>
+                                            <td class="text-dark">15 - 18 business days</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="fw-500 text-mode">To be delivered as: </th>
+                                            <td class="text-dark">Rolled With Frame</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pd_reviews" role="tabpanel" aria-labelledby="pd_reviews_tab">
+                        <div class="row">
+                            <div class="col-lg-7 pe-lg-8">
+                                <div class="row align-items-end">
+                                    <div class="col-sm-6">
+                                        <h5 class="m-0">Customer Reviews</h5>
+                                        <div class="rating-star small">
+                                            <span>
+                                                @avgrating.ToString("0.00") out of 5
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    <i class="fa-solid fa-star @(i <= avgrating ? "active" : "")"></i>
+                                                }
+                                            </span>
+                                            <br />
+                                            <span>(Based on @totalreviews @(totalreviews > 1 ? "reviews" : "review"))</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 text-sm-end"><a href="#">View all reviews</a></div>
+                                </div>
+                                @foreach (var item in ViewBag.ReviewTables)
+                                {
+                                    if (Model.Id == item.productid)
+                                    {
+                                        <div class="d-flex review-box border-top mt-4 pt-4">
+                                            <div>
+                                                <div class="review-image" style="display: flex; justify-content: center; align-items: center;">
+                                                    @if (!string.IsNullOrEmpty(item.profilephoto))
+                                                    {
+                                                        <img class="img-fluid" src="~/Content/assets/projectImages/ReviewerProfileImage/@item.profilephoto"
+                                                             title="@item.profilephoto" alt="">
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="fa-solid fa-user img-fluid" style="font-size:40px;"></i>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="col ps-3">
+                                                <h6>@item.username</h6>
+                                                <div class="rating-star small">
+                                                    @for (int i = 1; i <= 5; i++)
+                                                    {
+                                                        <i class="fa-solid fa-star @(i <= item.rating ? "active" : "")"></i>
+                                                    }
+                                                    <span>@item.rts.ToString("dd MMMM yyyy")</span>
+                                                </div>
+                                                <h6 class="m-0 pt-2">@item.title</h6>
+                                                <p class="m-0 pt-1">@item.comment</p>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="border p-4 sticky-lg-top review-form mt-4 mt-lg-0">
+                                    <h5 class="">WRITE A REVIEW</h5>
+                                    <p id="ReqAlertMsg" class="mb-3 pb-3" style="color: #e63946;"></p>
+
+                                    @using (Html.BeginForm("AddReview", "user", FormMethod.Post, new { @enctype = "multipart/form-data", id = "AddReviewForm" }))
+                                    {
+                                        <div class="row g-2">
+                                            <div class="col-sm-12 mb-2">
+                                                <label class="form-label m-0 pe-3 w-100">Rating</label>
+                                                <div class="rating-star ReviewRating">
+                                                    @for (int i = 5; i >= 1; i--)
+                                                    {
+                                                        <input type="radio" id="star@(i)" name="rating" value="@i" @(i == 5 ? "checked" : "") />
+                                                        <label class="fa-solid fa-star" for="star@(i)" title="@i stars"></label>
+                                                    }
+                                                    <input type="text" name="ProductID" value="@Model.Id" hidden />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 mb-2">
+                                                <label class="form-label">Review Title</label>
+                                                <input type="text" name="title" class="form-control form-control-sm" placeholder="Give your review a title">
+                                                <p id="titleReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                            </div>
+                                            <div class="col-sm-12 mb-2">
+                                                <label class="form-label">Body of Review (1500)</label>
+                                                <textarea rows="5" name="comment" class="form-control" placeholder="Write your comments here"></textarea>
+                                                <p id="commentReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                            </div>
+                                            <div class="col-sm-12 mb-2">
+                                                <label class="form-label">Picture (Optional)</label>
+                                                <input type="file" name="profilephoto" id="profilephoto" value="profilephoto" class="form-control form-control-sm">
+                                            </div>
+                                            <div class="col-sm-12 mb-2">
+                                                <label class="form-label">Name (Displayed Publicly Like <span style="color: #e63946;">Om Sharma</span>)</label>
+                                                <input type="text" name="username" class="form-control form-control-sm" placeholder="Enter your name (public)">
+                                                <p id="usernameReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                            </div>
+                                            <div class="col-sm-12 mb-2">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" name="useremail" class="form-control form-control-sm" placeholder="Enter your email (private)">
+                                                <p id="useremailReqAlertMsg" class="mb-2" style="color: #e63946; display: none;"></p>
+                                            </div>
+                                            <div class="col-12 pt-2">
+                                                <button type="submit" class="px-2 btn btn-primary">Submit Review</button>
+
+                                                <button class="ms-2 px-2 btn btn-mode">Cancel Review</button>
+                                            </div>
+
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Product Tabs -->
+    <!-- Sketch Product section -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mt-2">You May Also Like This</h3>
+                    <h5 class="fs-6 m-0">Sketch Art Collections</h5>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                              "slidesPerView": 2,
+                              "spaceBetween": 10,
+                              "loop": true,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "clickable": true
+                                },
+                              "navigation": {
+                                "nextEl": ".swiper-next-02",
+                                "prevEl": ".swiper-prev-02"
+                              },
+                              "autoplay": {
+                                "delay": 1500,
+                                "disableOnInteraction": false
+                              },
+                              "breakpoints": {
+                                "600": {
+                                  "slidesPerView": 3
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 15
+                                },
+                                "1200": {
+                                  "slidesPerView": 3,
+                                  "spaceBetween": 18
+                                }
+                              }
+                        }'>
+                    <div class="swiper-wrapper">
+                        <!-- Product Box -->
+                        @foreach (var item in (List<DeeptiArt.Models.ProductTbl>)@ViewBag.SketchCategoryProducts)
+                        {
+                            { Html.RenderPartial("_Product", item); }
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-02"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-02"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </section>
+    <!-- Mandala Art section -->
+    <!-- Product section -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mt-2">Mandala Art</h3>
+                    <p class="fs-6 m-0">Explore Classy Sketchy Arts</p>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                              "slidesPerView": 2,
+                              "spaceBetween": 10,
+                              "loop": true,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "clickable": true
+                                },
+                              "navigation": {
+                                "nextEl": ".swiper-next-03",
+                                "prevEl": ".swiper-prev-03"
+                              },
+                              "autoplay": {
+                                "delay": 3500,
+                                "disableOnInteraction": false
+                              },
+                              "breakpoints": {
+                                "600": {
+                                  "slidesPerView": 3
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 15
+                                },
+                                "1200": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 24
+                                }
+                              }
+                        }'>
+                    <div class="swiper-wrapper">
+                        <!-- Product Box -->
+                        @foreach (var item in (List<DeeptiArt.Models.ProductTbl>)@ViewBag.MandalaCategoryProducts)
+                        {
+                            { Html.RenderPartial("_Product", item); }
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-03"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-03"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </section>
+    <!-- End Product section -->
+    <!-- Product section -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center section-heading">
+                <div class="col-lg-6 text-center">
+                    <h3 class="h2 mt-2">Coloured Art</h3>
+                    <p class="fs-6 m-0">Explore Classy Sketchy Arts</p>
+                </div>
+            </div>
+            <div class="swiper-hover-arrow position-relative">
+                <div class="swiper swiper-container" data-swiper-options='{
+                              "slidesPerView": 2,
+                              "spaceBetween": 10,
+                              "loop": true,
+                              "pagination": {
+                                "el": ".swiper-pagination",
+                                "clickable": true
+                                },
+                              "navigation": {
+                                "nextEl": ".swiper-next-04",
+                                "prevEl": ".swiper-prev-04"
+                              },
+                              "autoplay": {
+                                "delay": 3500,
+                                "disableOnInteraction": false
+                              },
+                              "breakpoints": {
+                                "600": {
+                                  "slidesPerView": 3
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 15
+                                },
+                                "1200": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 24
+                                }
+                              }
+                        }'>
+                    <div class="swiper-wrapper">
+                        <!-- Product Box -->
+                        @foreach (var item in (List<DeeptiArt.Models.ProductTbl>)@ViewBag.ColouredCategoryProducts)
+                        {
+                            { Html.RenderPartial("_Product", item); }
+                        }
+                        <!-- End Product Box -->
+                    </div>
+                    <div class="swiper-pagination mt-4 d-lg-none position-relative"></div>
+                </div>
+                <div class="swiper-arrow-style-02 swiper-next swiper-next-04"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="swiper-arrow-style-02 swiper-prev swiper-prev-04"><i class="fa-solid fa-chevron-left"></i></div>
+            </div>
+        </div>
+    </section>
+    <!-- End Product section -->
+</main>
+<!-- End Main -->

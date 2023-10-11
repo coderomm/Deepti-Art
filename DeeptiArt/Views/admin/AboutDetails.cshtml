@@ -1,0 +1,128 @@
+﻿@model DeeptiArt.Models.AboutDetailsTbl
+
+@{
+    ViewBag.Title = "AboutDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="page-content">
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">Forms</div>
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item">
+                            <a href="~/Admin"><i class="bx bx-home-alt"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Form Layouts</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <h6 class="mb-0 text-uppercase">About Details Form</h6>
+                    <hr>
+                    <div class="card border-top border-0 border-4 border-primary">
+                        <div class="card-body p-4">
+                            <div class="card-title d-flex align-items-center">
+                                <h5 class="mb-0 text-primary">Company Details</h5>
+                            </div>
+                            <hr>
+
+                            @using (Html.BeginForm("AboutDetails", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "row g-3" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(model => model.Id)
+
+                                <div class="col-md-6">
+                                    <label for="cName" class="form-label">Company Name</label>
+                                    <div class="input-group">
+                                        <input value="@Model.cName" name="cName" type="text" class="form-control" id="cName" placeholder="Company Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cLogo" class="form-label">Company Logo</label>
+                                    <div class="input-group">
+                                        <input name="cLogo" class="form-control" type="file" id="cLogo">
+                                        <img src="@Url.Content("~/Content/Assets/projectImages/About/" + @Model.cLogo)" class="img-fluid" height="50" width="50" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-12">
+                                    <label for="cMobile1" class="form-label">Company Mob No 1</label>
+                                    <div class="input-group">
+                                        <input value="@Model.cMobile1" name="cMobile1" type="text" class="form-control" id="cMobile1" placeholder="Phone No">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-12">
+                                    <label for="cMobile2" class="form-label">Company Mob No 2</label>
+                                    <div class="input-group">
+                                        <input value="@Model.cMobile2" name="cMobile2" type="text" class="form-control" id="cMobile2" placeholder="Phone No">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-12">
+                                    <label for="cEmail" class="form-label">Company Email Address</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-message'></i></span>
+                                        <input value="@Model.cEmail" name="cEmail" type="text" class="form-control" id="cEmail" placeholder="Email Address">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="cAddress" class="form-label">Company Address</label>
+                                    <textarea value="@Model.cAddress" name="cAddress" class="form-control" id="cAddress" rows="3">@Model.cAddress</textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="cAbout" class="form-label">Company About Section</label>
+                                    <div class="input-group">
+                                        <textarea value="@Model.cAbout" name="cAbout" class="form-control" id="cAbout" rows="3">@Model.cAbout</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="cSliderImage1" class="form-label">Slider Image 1</label>
+                                    <div class="input-group">
+                                        <input name="cSliderImage1" class="form-control" type="file" id="cSliderImage1">
+                                        <img src="@Url.Content("~/Content/Assets/projectImages/About/" + @Model.cSliderImage1)" class="img-fluid" height="50" width="50" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="cSliderImage2" class="form-label">Slider Image 2</label>
+                                    <div class="input-group">
+                                        <input name="cSliderImage2" class="form-control" type="file" id="cSliderImage2">
+                                        <img src="@Url.Content("~/Content/Assets/projectImages/About/" + @Model.cSliderImage2)" class="img-fluid" height="50" width="50" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="cSliderImage3" class="form-label">Slider Image 3</label>
+                                    <div class="input-group">
+                                        <input name="cSliderImage3" class="form-control" type="file" id="formFile3">
+                                        <img src="@Url.Content("~/Content/Assets/projectImages/About/" + @Model.cSliderImage3)" class="img-fluid" height="50" width="50" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary"><i class="bx bxs-check-circle"></i> Save Changes</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+</div>
+
+

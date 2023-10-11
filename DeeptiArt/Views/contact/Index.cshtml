@@ -1,0 +1,106 @@
+﻿@model DeeptiArt.Models.AboutDetailsTbl
+
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<!-- Main -->
+<main>
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">Contact Us</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item">
+                            <a class="text-nowrap text-reset" href="~/">
+                                <i class="fa-solid fa-home"></i>Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">Contact Us</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Breadcrumb -->
+    <!-- Contact us -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 my-3 pe-lg-8">
+                    <h3 class="mb-2 h2">Get in Touch</h3>
+                    <p class="fw-400">Book Enquiry Now !</p>
+                    @using (Html.BeginForm("SendEnquiry", "contact", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "row g-3 pt-3", id = "contact-form" }))
+                    {
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control" name="uname" placeholder="Name *" type="text" required="">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control" name="umob" placeholder="Phone *" type="text" required="">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control" name="uemail" placeholder="Email *" type="text" required="">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control" name="usub" placeholder="Subject *" type="text">
+                        </div>
+                        <div class="col-12">
+                            <div class="contact2-textarea text-center">
+                                <textarea placeholder="Message *" name="umsg" class="form-control" required=""></textarea>
+                            </div>
+                            <div class="contact-btn mt-3">
+                                <button class="btn btn-slide-middle btn-mode rounded-2" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-lg-6 my-3">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3767.6871033580323!2d72.8562604!3d19.2088641!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b72571918f43%3A0xa0fb8813d5060cef!2sGokul%20Tower!5e0!3m2!1sen!2sin!4v1694696244231!5m2!1sen!2sin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-gray-100 section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="text-primary display-5 mb-3"><i class="fa fa-solid fa-phone"></i></div>
+                            <div class="">
+                                <p class="mb-0"><a class="text-reset" href="tel:@Model.cMobile1">@Model.cMobile1</a></p>
+                                <p><a class="text-reset" href="tel:@Model.cMobile2">@Model.cMobile2</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="text-primary display-5 mb-3"><i class="fa fa-solid fa-mail-forward"></i></div>
+                            <div class="">
+                                <p class="mb-0"><a class="text-reset" href="mailto:@Model.cEmail">@Model.cEmail</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="text-primary display-5 mb-3"><i class="fa fa-solid fa-globe"></i></div>
+                            <div class="">
+                                <p class="mb-0">@Model.cAddress</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- Contact end -->
+</main><!-- End Main -->

@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Orders";
+}
+<main>
+    <!-- Breadcrumb -->
+    <div class="py-3 bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <h1 class="m-0 h4 text-center text-lg-start">My Orders</h1>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <ol class="breadcrumb dark-link m-0 small justify-content-center justify-content-lg-end">
+                        <li class="breadcrumb-item"><a class="text-nowrap" href="~/"><i class="fa-solid fa-home"></i>Home</a></li>
+                        <li class="breadcrumb-item text-nowrap active" aria-current="page">My Orders</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Table -->
+    <div class="py-6">
+        <div class="container">
+            <div class="row">
+                <!-- Profile Menu -->
+                @Html.Partial("_ProfileMenu")
+                <!-- End Profile Menu -->
+                <!-- Content -->
+                <div class="col-lg-8 col-xxl-9">
+                    <div class="table-responsive fs-md mb-4">
+                        <table class="table table-bordered table-hover mb-0">
+                            <thead class="text-700 bg-gray-200">
+                                <tr>
+                                    <th class="fw-600">Order #</th>
+                                    <th class="fw-600">Item</th>
+                                    <th class="fw-600">Date Purchased</th>
+                                    <th class="fw-600">Status</th>
+                                    <th class="fw-600 text-end">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in ViewBag.MyOrders)
+                                {
+                                    <tr>
+                                        <td class="p-3"><a class="text-mode">@item.OrderTbl.OrderNumber</a></td>
+                                        <td class="p-3">
+                                            <a style="color: #4b566b;" href="@Url.RouteUrl("collectiondetails", new {productname = Url.Encode(item.ProductTbl.Name.Replace(" ", "-").ToLower())})">
+                                                <img class="img-fluid w-sm-25 float-start me-2 rounded-2" src="~/Content/assets/projectImages/Products/@item.ProductTbl.Image" alt="" />
+                                                <span style="text-align:justify;" class="w-sm-65 float-end">@item.ProductTbl.Name</span>
+                                            </a>
+                                        </td>
+                                        <td class="p-3">@item.OrderTbl.OrderDateTime.ToString("dd/MM/yyyy")</td>
+                                        <td class="p-3"><span class="badge bg-success m-0">Paid</span></td>
+                                        <td class="p-3 text-end"><i class="fa-solid fa-indian-rupee"></i> @item.OrderTbl.TotalAmount</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- End Content -->
+            </div>
+        </div>
+    </div>
+    <!--Table -->
+</main>
+<!-- End Main -->

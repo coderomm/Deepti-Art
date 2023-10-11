@@ -1,0 +1,84 @@
+﻿@model DeeptiArt.Models.ProductTbl
+
+<div class="swiper-slide">
+    <div class="product-card-6 data-product-id-container-div" data-product-id="@Model.Id">
+        <div class="product-card-image">
+            <div class="badge-ribbon">
+                @*<span class="badge bg-danger">Sale</span>*@
+            </div>
+            <div class="product-action shadow-sm">
+
+                <button type="button" class="xyz direct-add-to-cart-btn btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+
+                <button type="button" class="pqr add-to-wishlist-btn btn">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <a href="@Url.Action("collectiondetails", "collections", new { productname = Url.Encode(Model.Name.Replace(" ", "-").ToLower()) })" class="btn">
+                    <i class="fa-regular fa-eye"></i>
+                </a>
+
+
+            </div>
+            <div class="product-media">
+                <a href="@Url.Action("collectiondetails", "collections", new { productname = Url.Encode(Model.Name.Replace(" ", "-").ToLower()) })">
+                    <img class="img-fluid"
+                         src="~/Content/assets/projectImages/Products/@Model.Image" title="@Model.Image" alt="@Model.Image">
+                </a>
+            </div>
+        </div>
+        <div class="product-card-info">
+            <div class="product-meta small">
+                <a href="@Url.RouteUrl("catcollections", new {catname = Url.Encode(Model.CatName.Replace(" ", "-").ToLower()) })">@Model.CatName</a>,
+                <a href="@Url.RouteUrl("subcatcollections", new {catname = Url.Encode(Model.CatName.Replace(" ", "-").ToLower()), subcatname = Url.Encode(Model.SubcatName.Replace(" ", "-").ToLower()) })">@Model.SubcatName</a>
+            </div>
+            <div class="rating-star text">
+                @{
+                    int totalreviews = 0;
+                    int totalrating = 0;
+                    double avgrating = 0;
+                    double emptystarsoutoffive = 0;
+                }
+                @foreach (var ReviewModel in ViewBag.ReviewTables)
+                {
+                    if (Model.Id == ReviewModel.productid)
+                    {
+                        totalreviews++;
+                        totalrating += Convert.ToInt32(ReviewModel.rating);
+                    }
+
+                    avgrating = totalreviews > 0 ? (double)totalrating / totalreviews : 0;
+                    avgrating = Math.Round(avgrating, 2); // Round to two decimal places
+                    emptystarsoutoffive = 5 - avgrating;
+                }
+                <span>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (i <= avgrating)
+                        {
+                            <i class="fa-solid fa-star active"></i>
+                        }
+                        else
+                        {
+                            <i class="fa-regular fa-star"></i>
+                        }
+                    }
+                </span>
+
+                <span>(@(totalreviews < 1 ? "0 review" : (totalreviews > 1 ? totalreviews + " reviews" : " review")))</span>
+            </div>
+            <h6 class="product-title">
+                <a href="@Url.Action("collectiondetails", "collections", new { productname = Url.Encode(Model.Name.Replace(" ", "-").ToLower()) })">
+                    @Model.Name
+                </a>
+            </h6>
+            <div class="product-price">
+                @{ int dummyprice = Convert.ToInt32(Model.Price) + 160; }
+                <span class="text-primary"><i class="fa-solid fa-indian-rupee-sign"></i>@Model.Price.<small>00</small></span>
+                <del class="fs-sm text-muted"><i class="fa-solid fa-indian-rupee-sign"></i>@dummyprice.<small>00</small></del>
+            </div>
+        </div>
+    </div>
+</div>
