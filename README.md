@@ -2,7 +2,7 @@
 
 Welcome to Deepti Art, an e-commerce web application where you can explore and purchase a wide range of arts, sketches, and pencil sketches. This web app offers a seamless shopping experience with a rich set of features.
 
-![Deepti Art Screenshot](https://deeptiarts.databoltahai.in/Content/assets/projectImages/About/logo.png)
+![Deepti Art Screenshot](https://deeptiart.com/Content/assets/projectImages/About/logo.png)
 
 ## Key Features
 
@@ -15,7 +15,7 @@ Welcome to Deepti Art, an e-commerce web application where you can explore and p
 
 ## Getting Started
 
-Visit the live website at [Deepti Art](https://deeptiarts.databoltahai.in/) to explore and shop for exquisite artwork.
+Visit the live website at [Deepti Art](https://deeptiart.com/) to explore and shop for exquisite artwork.
 
 ## Tech Stack
 
